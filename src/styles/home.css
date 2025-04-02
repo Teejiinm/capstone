@@ -1,0 +1,44 @@
+.hero__section {
+    background: rgb(217, 217, 246);
+}
+
+.hero__section p {
+    color: black;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 50px 10px;
+}
+
+.hero__section h2  {
+    font-size: 1.1rem;
+    color: black;
+    line-height: 2rem;
+}
+
+.more__btn  {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: #fff;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 40px;
+
+}
+
+.more__btn a:hover {
+    color: inherit;
+}
+
+.hero__content{
+    padding-top: 45px;
+}
+
+.hero__img img{
+    height: 400px;
+    width: 100%;
+   border-radius: 20px;
+
+}

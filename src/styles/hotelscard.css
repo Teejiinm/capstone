@@ -1,0 +1,38 @@
+.hotels__card{
+    cursor: pointer;
+}
+
+.hotels__info h3 a {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.hotels__info a:hover{
+    color: inherit;
+}
+
+.hotels__info span {
+    font-size: 0.9rem;
+}
+
+.hotels__card-bottom .price{
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.hotels__card-bottom span i{
+    font-size: 1.2rem;
+    padding: 5px;
+    background: black;
+    color: white;
+    border-radius: 50px;
+}
+
+.hotel_img img{
+    height: 250px;
+    width: 100%;
+   border-radius: 30px;
+}
