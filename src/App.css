@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #ff7e01;
-  --secondary-color: #faa935;
+  --primary-color: #220c5e;
+  --secondary-color: black;
   --heading-color: #0b2727;
   --text-color: #6e7074;
   --font-name: "Montserrat", sans-serif;
@@ -51,7 +51,7 @@ ul {
 .primary__btn a {
   font-size: 1.1rem;
   text-decoration: none;
-  color: #fff;
+  color: white;
 }
 .primary__btn a:hover {
   color: inherit;

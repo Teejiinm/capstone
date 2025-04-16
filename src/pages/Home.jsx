@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from "react";
 import '../styles/home.css';
-import hotels from '../assets/data/hotels'
+
 
 import Helmet from "../components/Helmet/Helmet";
 
 import {Link} from "react-router-dom";
+import Subtitle from "./../shared/Subtitle";
 
 
 import { Container, Row, Col } from 'reactstrap';
 import heroImg from "../assets/images/IMG_4102.jpg";
 
-import HotelsList from "../components/UI/HotelsList";
+
+import ServiceList from "../services/ServiceList";
+import Blog from "../components/Blog/Blog";
+import FeaturedTourList from "../components/FeaturedTourList/FeaturedTourList";
 
 
 
@@ -21,58 +25,58 @@ const Home = () => {
 
     <Helmet title={"Home"}>
     {/*-----------hero---------*/}
-    <section className="hero__section">
-        <Container>
-            <Row>
-                <Col lg='6' md='6'>
-                <div className="hero__content">
-                    <p className="hero__subtitle">
-                        Welcome to Mongolia
-                        </p>
-                    <h2>
-                    Mongolia is a country of stunning landscapes, from vast steppes to the Gobi Desert. Rich in history and culture, it was the birthplace of the Mongol Empire under Genghis Khan. Explore a unique blend of ancient traditions and modern developments, with nomadic life still flourishing.
-                    </h2>
-                    <button className="more__btn"><Link to='about'>More</Link></button>
-                </div>
-                </Col>
-
-                <Col lg="6" md="6">
-                <div className="hero__img">
-                    <img src={heroImg} alt="" />
-                </div>
-                </Col>
-            </Row>
-        </Container>
-        
-    </section>
+    <section className='hero__section'>
+                <Container>
+                    <Row>
+                        <Col lg='12'>
+                            <h1>Welcome to Mongolia</h1>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
     {/*-----------hero end---------- */}
     
-    {/*--------Hotel--------*/}
+    {/*--------Tours--------*/}
     
     <section className="hotels">
         <Container>
             <Row>
-                <Col lg="12" className="text-center">
-                <h2 className="section__title">Hotels</h2>
+                <Col lg="12" className="mb-5">
+                <h2 className="section__title">Package Tours</h2>
                 </Col>
-                <HotelsList />
+                <FeaturedTourList />
             </Row>
         </Container>
     </section>
-    {/*----------hotel ned---------*/}
+    {/*----------tour ned---------*/}
 
-    {/*-----------tour--------
-    <section className="tours">
+    { /*--------Services--------*/}
+    <section>
         <Container>
             <Row>
-                <Col lg='12' className="text-center">
-                <h2 className="section__title">Tours</h2>
+                <Col lg="3">
+                <h5 className="services__subtitle">More information about</h5>
+                <h2 className="section__title">Mongolia</h2>
                 </Col>
-                <ToursList />
+                <ServiceList />
             </Row>
         </Container>
-    </section>
-    ---------tour end--------*/}
+        </section>
+        {/*----------services end---------*/}
+
+        {/*--------Blog--------*/}
+        <section>
+            <Container>
+                <Row>
+                    <Col lg="12">
+                    
+                        <h2 className="section__title">Our Blogs</h2>
+                    </Col>
+                    <Blog />
+                </Row>
+            </Container>
+        </section>
+        {/*----------blog end---------*/}
 </Helmet>
 );
 };

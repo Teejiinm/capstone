@@ -1,18 +1,19 @@
 .hero__section {
-    background: rgb(217, 217, 246);
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+    url("../assets/images/hero.jpg") no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.hero__section p {
-    color: black;
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 50px 10px;
-}
+.hero__section h1 {
+    font-size: 4rem;
+    color: #fff
 
-.hero__section h2  {
-    font-size: 1.1rem;
-    color: black;
-    line-height: 2rem;
+
 }
 
 .more__btn  {
