@@ -7,6 +7,7 @@ import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from '../assets/images/user.png'
 import Booking from "../components/Booking/Booking";
+import TravelSchedule from "./TravelSchedule";
 
 
 const TourDetials = () => {
@@ -69,6 +70,8 @@ const TourDetials = () => {
                     </div>
                     <h5>Description</h5>
                     <p>{desc}</p>
+                    <h3>Tour Schedule</h3>
+                    <TravelSchedule itinerary={tour.itinerary} />
                     </div>
 
                     {/*--------tour reviews-----*/}

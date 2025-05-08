@@ -7,6 +7,8 @@ import tourImg06 from "../images/tour-img06.jpg";
 import tourImg07 from "../images/tour-img07.jpg";
 import tourImg08 from "../images/tour-img08.jpg";
 
+import { SummerFestivalDay1, SummerFestivalDay2 } from "../../components/Initerary/SummerFestival";
+
   const tours = [
     {
       id: "01",
@@ -25,9 +27,36 @@ import tourImg08 from "../images/tour-img08.jpg";
       avgRating: 4.5,
       photo: tourImg01,
       featured: true,
+      itinerary: [
+        {
+          day: "Day 1",
+          date: "2025/05/22",
+          route: "Incheon ➝ Ulaanbaatar",
+          Component: SummerFestivalDay1, // 실제 컴포넌트
+        },
+        
+      ]
     },
     {
       id: "02",
+      title: "City Tour",
+      city: "Ulaanbaatar",
+      distance: 100,
+      price: 99,
+      maxGroupSize: 10,
+      desc: " ",
+      reviews: [
+        {
+          name: "jhon doe",
+          rating: 4.6,
+        },
+      ],
+      avgRating: 4.5,
+      photo: tourImg02,
+      featured: true,
+    },
+    {
+      id: "03",
       title: "Adventure Tour",
       city: "Bayan-Ulgii",
       distance: 1800,
@@ -40,7 +69,7 @@ import tourImg08 from "../images/tour-img08.jpg";
       featured: true,
     },
     {
-      id: "03",
+      id: "04",
       title: "Dessert Tour",
       city: "Umnugobi",
       distance: 500,
@@ -53,7 +82,7 @@ import tourImg08 from "../images/tour-img08.jpg";
       featured: true,
     },
     {
-      id: "04",
+      id: "05",
       title: "Real Frozen World",
       city: "Khuvsgul",
       distance: 800,
@@ -66,7 +95,7 @@ import tourImg08 from "../images/tour-img08.jpg";
       featured: false,
     },
     {
-      id: "05",
+      id: "06",
       title: "Traditional Tour",
       city: "Arkhangai",
       distance: 300,
@@ -79,7 +108,7 @@ import tourImg08 from "../images/tour-img08.jpg";
       featured: false,
     },
     {
-      id: "06",
+      id: "07",
       title: "Golf Tour",
       city: "Ulaanbaatar",
       distance: 100,
@@ -92,7 +121,7 @@ import tourImg08 from "../images/tour-img08.jpg";
       featured: false,
     },
     {
-      id: "07",
+      id: "08",
       title: "Winter's City Tour",
       city: "Ulaanbaatar",
       distance: 100,
