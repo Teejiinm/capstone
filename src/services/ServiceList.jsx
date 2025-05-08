@@ -1,4 +1,4 @@
-import Raect from "react";
+import React from "react";
 import ServiceCard from "./ServiceCard";
 import { Col } from "reactstrap";
 
