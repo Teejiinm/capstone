@@ -5,7 +5,7 @@ import '../styles/home.css';
 import Helmet from "../components/Helmet/Helmet";
 
 import {Link} from "react-router-dom";
-import Subtitle from "./../shared/Subtitle";
+import Subtitle from "../shared/Subtitle";
 
 
 import { Container, Row, Col } from 'reactstrap';

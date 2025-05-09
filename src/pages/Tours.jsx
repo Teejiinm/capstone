@@ -3,8 +3,8 @@ import CommonSection from "../shared/CommonSection";
 
 import "../styles/tours.css";
 import tourData from "../assets/data/tours";
-import TourCard from "./../shared/TourCard";
-import SearchBar from "./../shared/SearchBar";
+import TourCard from "../shared/TourCard";
+import SearchBar from "../shared/SearchBar";
 /*port Newsletter from"./../shared/Newsletter";*/
 import { Container, Row, Col } from "reactstrap";
 
