@@ -89,7 +89,7 @@ const TourDetials = () => {
 
                                 <div className="review__input">
                                     <input type="text" ref={reviewMsgRef} placeholder="Share your thoughts" required />
-                                    <button className="btn primary__btn text-black" type="submit">Submit</button>
+                                    <button className="btn primary__btn text-white" type="submit">Submit</button>
                                 </div>
                             </Form>
 

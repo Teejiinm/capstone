@@ -7,7 +7,7 @@ import tourImg06 from "../images/tour-img06.jpg";
 import tourImg07 from "../images/tour-img07.jpg";
 import tourImg08 from "../images/tour-img08.jpg";
 
-import { SummerFestivalDay1, SummerFestivalDay2 } from "../../components/Initerary/SummerFestival";
+import { SummerFestivalDay1, SummerFestivalDay2, SummerFestivalDay3, SummerFestivalDay4, SummerFestivalDay5 } from "../../components/Initerary/SummerFestival";
 
   const tours = [
     {
@@ -17,7 +17,7 @@ import { SummerFestivalDay1, SummerFestivalDay2 } from "../../components/Initera
       distance: 100,
       price: 99,
       maxGroupSize: 10,
-      desc: " ",
+      desc: "Experience the essence of Mongolia where tradition and modern culture blend seamlessly. Witness the excitement of the Naadam Festival and dance the day away at the Playtime Music Festival. From nomadic adventures to vibrant city life, this summer tour captures the heart of Mongolia.",
       reviews: [
         {
           name: "jhon doe",
@@ -30,9 +30,34 @@ import { SummerFestivalDay1, SummerFestivalDay2 } from "../../components/Initera
       itinerary: [
         {
           day: "Day 1",
-          date: "2025/05/22",
+          date: "2025/07/08",
           route: "Incheon ➝ Ulaanbaatar",
           Component: SummerFestivalDay1, // 실제 컴포넌트
+        },
+        {
+          day: "Day 2",
+          date: "2025/07/09",
+          route: "Playtime Music Festival",
+          Component: SummerFestivalDay2, // 실제 컴포넌트
+        },
+        {
+          day: "Day 3",
+          date: "2025/07/10",
+          route: "Terelj ➝ Ulaanbaatar",
+          Component: SummerFestivalDay3, // 실제 컴포넌트
+        },
+        {
+          day: "Day 4",
+          date: "2025/07/11",
+          route: "Mongolian National Naadam Festival",
+          Component: SummerFestivalDay4, // 실제 컴포넌트
+        },
+        {
+          day: "Day 5",
+          date: "2025/07/12",
+          route: "Ulaanbaatar ➝ Incheon",
+
+          Component: SummerFestivalDay5, // 실제 컴포넌트
         },
         
       ]

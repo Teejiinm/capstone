@@ -42,7 +42,7 @@ ul {
 }
 
 .primary__btn {
-  background: rgb( rgb(8, 8, 78)) !important;
+  background: blue !important;
   border: none !important;
   border-radius: 50px !important;
   padding: 0.4rem 1.5rem !important;
@@ -66,11 +66,11 @@ ul {
 .secondary__btn a {
   text-decoration: none;
   font-size: 1.1rem;
-  color: var(--heading-color);
+  color: black;
 }
 
 .secondary__btn a:hover {
-  color: inherit;
+  color: blue;
 }
 
 .section__subtitle {

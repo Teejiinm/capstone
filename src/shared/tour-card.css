@@ -24,7 +24,7 @@
     width: max-content;
     height: max-content;
     z-index: 10;
-    background: var(--primary-color);
+    background: blue;
     color: #fff;
     padding: 0.3rem 0.5rem;
     border-radius: 3px 0 0 0;
@@ -68,7 +68,7 @@
 }
 
 .tour__title a:hover{
-    color: var(--secondary-color);
+    color: blue;
 }
 
 .card__bottom h5{
