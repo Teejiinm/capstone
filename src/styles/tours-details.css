@@ -40,6 +40,10 @@
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
+.tour__info h3{
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
 
 .tour__info p{
     
@@ -110,7 +114,7 @@
 
 .review__item p {
     font-size: 0.9rem;
-    color: var(--text-color);
+    color: black;
     
 }
 

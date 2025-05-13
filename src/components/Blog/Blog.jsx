@@ -1,77 +1,111 @@
-import React from "react";
-import "./blog.css";
-import Slider from 'react-slick';
-import ava01 from "../../assets/images/ava01.jpg";
-import ava02 from "../../assets/images/ava02.jpg";
-import ava03 from "../../assets/images/ava03.jpg";
+import React, { useState } from 'react';
+import './blog.css';
+import BlogCard from '../../shared/BlogCard'; // default import
+import { blog as blogData } from '../../shared/BlogCard'; // named import of blog data
+import { FaSearch, FaPen } from 'react-icons/fa';
+
+const hashtags = ['#City', '#Desert', '#Culture', '#Adventure', '#Food'];
 
 const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [newBlog, setNewBlog] = useState({ title: '', content: '', image: null });
+  const [showWriteBlog, setShowWriteBlog] = useState(false);
+  const [selectedTag, setSelectedTag] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 4;
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 1000,
-        swipeToSlide: true,
-        autoplaySpeed: 2000,
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                },
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                },
-            },
-           
-        ]
-    }
-    return <Slider {... settings}>
-        <div className="blog py-4 px-3">
-            <p>very good trip</p>
+  const filteredBlogs = blogData.filter(blog =>
+    (blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      blog.content.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    (selectedTag ? blog.content.includes(selectedTag.replace('#', '')) : true)
+  );
 
-            <div className=" d-flex align-items-center gap-4 mt-3">
-                <img src={ava01} className="w-25 h-25 rounded-2" alt="" />
-                <div>
-                    <h5 className="mb-0 mt-3">John Doe</h5>
-                    <p>12 Dec 2023</p>
-                </div>
-            </div>
-            </div>
+  const indexOfLast = currentPage * blogsPerPage;
+  const indexOfFirst = indexOfLast - blogsPerPage;
+  const currentBlogs = filteredBlogs.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
 
-            <div className="blog py-4 px-3">
-            <p>very good trip</p>
+  return (
+    <div>
+  {/* Search + Write */}
+  <div className="top-bar">
+    <div className="search-input">
+      <FaSearch className="icon" />
+      <input
+        type="text"
+        placeholder="Search Blogs"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
+    <button className="write-button" onClick={() => setShowWriteBlog(!showWriteBlog)}>
+      Write
+    </button>
+  </div>
 
-            <div className=" d-flex align-items-center gap-4 mt-3">
-                <img src={ava02} className="w-25 h-25 rounded-2" alt="" />
-                <div>
-                    <h5 className="mb-0 mt-3">John Doe</h5>
-                    <p>12 Dec 2023</p>
-                </div>
-            </div>
-            </div>
+  {/* Hashtag Filters */}
+  <div className="hashtag-section">
+    {hashtags.map((tag) => (
+      <button
+        key={tag}
+        className={`hashtag-button ${selectedTag === tag ? 'active' : ''}`}
+        onClick={() => setSelectedTag(tag === selectedTag ? '' : tag)}
+      >
+        {tag}
+      </button>
+    ))}
+  </div>
 
-            <div className="blog py-4 px-3">
-            <p>very good trip</p>
+  {/* Write Blog */}
+  {showWriteBlog && (
+    <div className="write-blog-section">
+      <h2>Write a Blog</h2>
+      <form onSubmit={(e) => { e.preventDefault(); }}>
+        <input
+          type="text"
+          placeholder="Blog Title"
+          value={newBlog.title}
+          onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
+          required
+        />
+        <textarea
+          placeholder="Blog Content"
+          value={newBlog.content}
+          onChange={(e) => setNewBlog({ ...newBlog, content: e.target.value })}
+          required
+        />
+        <input type="file" accept="image/*" />
+        <button type="submit" className="submit-button">Submit</button>
+      </form>
+    </div>
+  )}
 
-            <div className=" d-flex align-items-center gap-4 mt-3">
-                <img src={ava03} className="w-25 h-25 rounded-2" alt="" />
-                <div>
-                    <h5 className="mb-0 mt-3">John Doe</h5>
-                    <p>12 Dec 2023</p>
-                </div>
-            </div>
-            </div>
-    </Slider>
+  {/* Blog List (Only show when "Write" is not active) */}
+  {!showWriteBlog && (
+    <div className="blog-list">
+      {currentBlogs.map((blog) => (
+        <BlogCard key={blog.id} blog={blog} />
+      ))}
+    </div>
+  )}
+
+  {/* Pagination */}
+  {!showWriteBlog && (
+    <div className="pagination">
+      {Array.from({ length: totalPages }, (_, i) => (
+        <button
+          key={i}
+          className={currentPage === i + 1 ? 'active' : ''}
+          onClick={() => setCurrentPage(i + 1)}
+        >
+          {i + 1}
+        </button>
+      ))}
+    </div>
+  )}
+</div>
+
+  );
 };
 
 export default Blog;

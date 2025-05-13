@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import '../styles/tours-detials.css'
+import '../styles/tours-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 import {useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -7,9 +7,10 @@ import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from '../assets/images/user.png'
 import Booking from "../components/Booking/Booking";
+import TravelSchedule from "./TravelSchedule";
 
 
-const TourDetials = () => {
+const TourDetails = () => {
 
     const { id } = useParams();
     const reviewMsgRef = useRef('');
@@ -69,6 +70,8 @@ const TourDetials = () => {
                     </div>
                     <h5>Description</h5>
                     <p>{desc}</p>
+                    <h3>Tour Schedule</h3>
+                    <TravelSchedule itinerary={tour.itinerary} />
                     </div>
 
                     {/*--------tour reviews-----*/}
@@ -86,7 +89,7 @@ const TourDetials = () => {
 
                                 <div className="review__input">
                                     <input type="text" ref={reviewMsgRef} placeholder="Share your thoughts" required />
-                                    <button className="btn primary__btn text-black" type="submit">Submit</button>
+                                    <button className="btn primary__btn text-white" type="submit">Submit</button>
                                 </div>
                             </Form>
 
@@ -131,4 +134,4 @@ const TourDetials = () => {
 );
 };
 
-export default TourDetials;
+export default TourDetails;

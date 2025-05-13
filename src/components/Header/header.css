@@ -36,11 +36,11 @@
 }
 
 .nav__item a:hover{
-    color: var(--primary-color);
+    color: blue;
 }
 
 .nav__item a.active__link{
-    color: var(--primary-color);
+    color: blue;
 }
 
 .mobile__menu{

@@ -7,12 +7,14 @@
 .card {
     border: none !important;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    border-radius: 12px;
 }
 
 .tour__img{
-   position: relative;
+    position: relative;
     height: 200px;
-    width: 260px;
+    width: 100%;
+    object-fit: cover;
     
     
 }
@@ -24,7 +26,7 @@
     width: max-content;
     height: max-content;
     z-index: 10;
-    background: var(--primary-color);
+    background: blue;
     color: #fff;
     padding: 0.3rem 0.5rem;
     border-radius: 3px 0 0 0;
@@ -68,7 +70,7 @@
 }
 
 .tour__title a:hover{
-    color: var(--secondary-color);
+    color: blue;
 }
 
 .card__bottom h5{
@@ -83,19 +85,25 @@
     font-size: 0.8rem;
 }
 
-.booking__btn{
-    background: var(--secondary-color) !important;
+.booking__btn {
+    margin-top: 0.3rem; /* Reduced from 0.8rem to move the button up */
+    font-size: 1.1rem;
     cursor: pointer;
-    padding: 0.2rem 0.5rem !important;
 }
 
-.booking__btn a{
+.booking__btn a {
+    padding: 0.5rem 0.6rem; /* Adjusted padding */
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
     text-decoration: none;
-    font-size: .9rem;
-    color: #fff;
 }
 
-.booking__btn a:hover{
+.booking__btn a:hover {
+    background-color: blue;
     color: #fff;
-    
 }
