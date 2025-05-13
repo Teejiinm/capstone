@@ -22,15 +22,15 @@ const quick__links = [
 
 const quick__links2 = [
     {
-        path: '/blog',
-        display: 'Blog',
+        path: '/blogs',
+        display: 'Blogs',
     },
     {
         path:'/login',
         display:'Login'
     },
     {
-        path:'/signup',
+        path:'/register',
         display:'Sign Up'
     },
 ];

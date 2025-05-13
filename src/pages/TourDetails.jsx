@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import '../styles/tours-detials.css'
+import '../styles/tours-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 import {useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import Booking from "../components/Booking/Booking";
 import TravelSchedule from "./TravelSchedule";
 
 
-const TourDetials = () => {
+const TourDetails = () => {
 
     const { id } = useParams();
     const reviewMsgRef = useRef('');
@@ -134,4 +134,4 @@ const TourDetials = () => {
 );
 };
 
-export default TourDetials;
+export default TourDetails;
