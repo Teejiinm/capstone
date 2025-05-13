@@ -5,8 +5,9 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
 import tourRoute  from './routes/tours.js';   
-//import { userRouter } from './routes/user.js';
-//import { authRouter } from './routes/auth.js';
+import userRoute from './routes/users.js';
+import authRoute from './routes/auth.js';
+
 dotenv.config();    
 const app = express();
 const port = process.env.PORT || 8000;
@@ -14,7 +15,10 @@ const port = process.env.PORT || 8000;
 mongoose.set('strictQuery', false);
 const connect = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(process.env.MONGO_URI,{
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         console.log("Connected to MongoDB database");
     } catch (error) {
         console.log("Error connecting to MongoDB database", error);
@@ -25,6 +29,8 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use('/tours', tourRoute);
+app.use('/users', userRoute);
+app.use('/auth', authRoute);
 
 app.listen(port, () => {
     connect();

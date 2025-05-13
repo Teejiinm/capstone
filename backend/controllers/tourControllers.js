@@ -68,7 +68,8 @@ export const getSingleTour = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Successfully deleted",
+      message: "Successful",
+      
     });
   } catch (err) {
     res.status(404).json({
