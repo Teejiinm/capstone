@@ -2,14 +2,8 @@ import React, { useState, useEffect } from "react";
 import CommonSection from "../shared/CommonSection";
 import "../styles/tours.css";
 import tourData from "../assets/data/tours";
-<<<<<<< HEAD
 import TourCard from "../shared/TourCard";
 import SearchBar from "../shared/SearchBar";
-/*port Newsletter from"./../shared/Newsletter";*/
-=======
-import TourCard from "./../shared/TourCard";
-import SearchBar from "./../shared/SearchBar";
->>>>>>> 163829768f4e7f1823e38e46d31295083baef47e
 import { Container, Row, Col } from "reactstrap";
 
 const Tours = () => {

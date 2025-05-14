@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import '../styles/home.css';
 import Helmet from "../components/Helmet/Helmet";
-<<<<<<< HEAD
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Subtitle from "../shared/Subtitle";
 
-
-=======
->>>>>>> 163829768f4e7f1823e38e46d31295083baef47e
 import { Container, Row, Col } from 'reactstrap';
 import heroImg from "../assets/images/IMG_4102.jpg";
 import ServiceCard from "../services/ServiceCard";
@@ -80,12 +76,10 @@ const Home = () => {
                         <Row className="g-0 mt-0">  {/* gutter, margin 줄이기 */}
                             <ServiceCard />
                         </Row>
-
                     </Row>
                 </Container>
             </section>
             {/*----------Services End---------*/} 
-
 
             {/*--------Blog--------*/}
             <section className="blog-section">
