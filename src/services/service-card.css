@@ -1,6 +1,5 @@
 .info__section {
-  padding: 4rem 2rem;
-  background-color: #fff;
+  padding: 2rem 2rem;
 }
 
 .info__card {
@@ -52,22 +51,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  color: blue;
+  background: blue;
+  color: white;
   transition: all 0.3s ease;
 }
+
+
 
 /* Hover effect */
 .info__card.hovered {
   background-color: blue;
+  .info__go {
+    background: white;
+    color: blue;
+  }
 }
 
 .info__card.hovered .info__icon,
 .info__card.hovered .info__title,
-.info__card.hovered .info__go {
+.info__card.hovered  {
   color: white;
 }
 
-.info__card.hovered .info__go {
+.info__card.hovered .info__go{
   border-color: white;
 }

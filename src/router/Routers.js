@@ -10,6 +10,9 @@ import SearchResultList from "../pages/SearchResultList";
 import ThankYou from "../pages/ThankYou";
 import Blog from "../components/Blog/Blog";
 import BlogDetails from "../pages/BlogDetails";
+import Information from "../pages/Information";
+
+
 
 const Routers = () => {
   return (
@@ -24,6 +27,9 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/thank-you" element={<ThankYou />} />
+      <Route path="/about" element={<Information />} />
+      
+      
     </Routes>
   );
 };

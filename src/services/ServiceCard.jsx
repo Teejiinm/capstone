@@ -22,6 +22,7 @@ const ServiceCard = () => {
   {cardData.map((card) => (
   <Col lg="6" md="6" key={card.id}>
     <Link to="/about" className="info__card__link">
+
       <div
         className={`info__card ${hoveredCard === card.id ? 'hovered' : ''}`}
         onMouseEnter={() => setHoveredCard(card.id)}
