@@ -1,45 +1,45 @@
+/* Hero Section */
 .hero__section {
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-    url("../assets/images/hero.jpg") no-repeat center center;
+    url("../assets/images/home.jpg") no-repeat center center;
     background-size: cover;
-    height: 400px;
+    height: 100vh;  /* 페이지가 로드될 때 화면 전체에 이미지를 보여줌 */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    transition: opacity 0.5s ease-out;
+    z-index: 1;
 }
 
+/* When scrolling, image fades out */
+.hero__section.hidden {
+    opacity: 0;  /* 스크롤시 이미지가 사라짐 */
+}
+
+/* Title style */
 .hero__section h1 {
-    font-size: 4rem;
-    color: #fff
-
-
+    font-size: 5rem;
+    color: white;
+    font-weight: bold;
+    z-index: 1; /* 텍스트가 배경 위에 오도록 설정 */
 }
 
-.more__btn  {
-    border: none;
-    outline: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    background: #fff;
-    color: inherit;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 40px;
-
+/* Package Tours 섹션 */
+.hotels {
+    padding-top: 60px;
+    transition: transform 0.5s ease-out;
 }
 
-.more__btn a:hover {
-    color: inherit;
+.hotels.hidden {
+    transform: translateY(-50px);  /* 스크롤 내리면 Package Tours 위로 올라가도록 설정 */
 }
 
-.hero__content{
-    padding-top: 45px;
-}
-
-.hero__img img{
-    height: 400px;
-    width: 100%;
-   border-radius: 20px;
-
+/* Content Sections */
+.section__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0rem;
 }

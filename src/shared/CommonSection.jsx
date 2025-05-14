@@ -3,18 +3,12 @@ import './common-section.css'
 
 import { Container, Row, Col } from 'reactstrap';
 
-const CommonSection = ({title}) => {
-    return (
-        <section className='common__section'>
-            <Container>
-                <Row>
-                    <Col lg='12'>
-                        <h1>{title}</h1>
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-    )
-    }
+const CommonSection = ({ title }) => {
+  return (
+    <section className="common__section">
+      <h1>{title}</h1>
+    </section>
+  );
+};
 
-    export default CommonSection;
+export default CommonSection;

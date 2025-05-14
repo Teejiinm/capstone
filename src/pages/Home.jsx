@@ -11,7 +11,7 @@ import Subtitle from "../shared/Subtitle";
 >>>>>>> 163829768f4e7f1823e38e46d31295083baef47e
 import { Container, Row, Col } from 'reactstrap';
 import heroImg from "../assets/images/IMG_4102.jpg";
-import ServiceList from "../services/ServiceList";
+import ServiceCard from "../services/ServiceCard";
 import BlogCard from "../shared/BlogCard";  // Import BlogCard directly
 import FeaturedTourList from "../components/FeaturedTourList/FeaturedTourList";
 
@@ -20,15 +20,36 @@ import { blog as blogData } from "../shared/BlogCard";  // Assuming the blog dat
 
 const Home = () => {
     const blogsToShow = blogData.slice(0, 4); // Limit to only 4 blog posts
+    const [imageHidden, setImageHidden] = useState(false);
+    const [tourHidden, setTourHidden] = useState(false);
+
+    // Handle scroll event to hide image and move Package Tours
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        
+        // If scrolled more than 50px, hide the hero image and move the Package Tours
+        if (scrollPosition > 50) {
+            setImageHidden(true);
+            setTourHidden(true);  // Move Package Tours up when scrolled
+        } else {
+            setImageHidden(false);
+            setTourHidden(false);  // Reset position of Package Tours
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <Helmet title={"Home"}>
             {/*-----------Hero Section---------*/}
-            <section className='hero__section'>
+            <section className={`hero__section ${imageHidden ? 'hidden' : ''}`}>
                 <Container>
                     <Row>
                         <Col lg='12'>
-                            <h1>Welcome to Mongolia</h1>
+                            <h1>WELCOME TO MONGOLIA</h1>
                         </Col>
                     </Row>
                 </Container>
@@ -36,7 +57,7 @@ const Home = () => {
             {/*-----------Hero End---------- */}
 
             {/*--------Tours--------*/}
-            <section className="hotels">
+            <section className={`hotels ${tourHidden ? 'hidden' : ''}`}>
                 <Container>
                     <Row>
                         <Col lg="12" className="mb-5">
@@ -56,28 +77,31 @@ const Home = () => {
                             <h5 className="services__subtitle">More information about</h5>
                             <h2 className="section__title">Mongolia</h2>
                         </Col>
-                        <ServiceList />
+                        <Row className="g-0 mt-0">  {/* gutter, margin 줄이기 */}
+                            <ServiceCard />
+                        </Row>
+
                     </Row>
                 </Container>
             </section>
-            {/*----------Services End---------*/}
+            {/*----------Services End---------*/} 
+
 
             {/*--------Blog--------*/}
-            <section>
+            <section className="blog-section">
                 <Container>
                     <Row>
-                        <Col lg="12">
+                        <Col lg="12" className="mb-5">
                             <h2 className="section__title">Our Blogs</h2>
                         </Col>
                     </Row>
                     <Row className="g-3 align-items-stretch">
-  {blogsToShow.map((blog) => (
-    <Col lg="3" md="4" sm="6" xs="12" key={blog.id} className="d-flex">
-      <BlogCard blog={blog} />
-    </Col>
-  ))}
-</Row>
-
+                        {blogsToShow.map((blog) => (
+                            <Col lg="3" md="4" sm="6" xs="12" key={blog.id} className="d-flex">
+                                <BlogCard blog={blog} />
+                            </Col>
+                        ))}
+                    </Row>
                 </Container>
             </section>
             {/*----------Blog End---------*/}

@@ -1,0 +1,72 @@
+.info__section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.info__card {
+  background-color: white;
+  border: 2px solid blue;
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: 220px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+.info__card__link {
+  text-decoration: none;
+}
+
+
+
+.info__icon {
+  color: blue;
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s;
+}
+
+.info__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.info__go {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1rem;
+  border: 2px solid blue;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: blue;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.info__card.hovered {
+  background-color: blue;
+}
+
+.info__card.hovered .info__icon,
+.info__card.hovered .info__title,
+.info__card.hovered .info__go {
+  color: white;
+}
+
+.info__card.hovered .info__go {
+  border-color: white;
+}

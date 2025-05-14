@@ -29,15 +29,21 @@ const Tours = () => {
   return (
     <>
       <CommonSection title={"All Tours"} />
-      <section>
-        <Container>
-          <Row>
-            <SearchBar />
-          </Row>
-        </Container>
-      </section>
 
-      <section className="pt-0">
+<section className="searchbar-overlay">
+  <Container>
+    <Row className="justify-content-center">
+      <Col lg="8">
+        <SearchBar />
+      </Col>
+    </Row>
+  </Container>
+</section>
+
+
+      <section className="pt-5 mt-5" style={{ paddingTop: "6rem" }}>
+
+
         <Container>
           <Row>
             {selectedTours.map((tour) => (
