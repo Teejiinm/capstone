@@ -1,0 +1,77 @@
+/* 지역 색상은 그대로 */
+.mongolia-map .region-capital { fill: #ff6f61; }
+.mongolia-map .region-central { fill: #fbbc04; }
+.mongolia-map .region-east { fill: #34a853; }
+.mongolia-map .region-north { fill: #4285f4; }
+.mongolia-map .region-south { fill: #ea4335; }
+.mongolia-map .region-southeast { fill: #f9ab00; }
+.mongolia-map .region-southwest { fill: #a142f4; }
+.mongolia-map .region-west { fill: #00bfa5; }
+
+/* information.css */
+
+.mongolia-map {
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.mongolia-map path {
+  stroke: white;
+  stroke-width: 1;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-wrapper {
+  position: relative;
+  width: auto;
+  max-width: 100%;
+}
+
+.description {
+  max-width: 800px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+
+
+
+/* 지도 사이즈는 SVG에 따라 자동 조절됨 => 건드리지 않음 */
+
+/* region label 텍스트 */
+.region-label {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0056b3;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* 지도 위에서 마우스 올리면 텍스트 표시 */
+.map-wrapper:hover .region-label {
+  opacity: 1;
+}
+
+/* 위치 지정 */
+.region-capital { top: 55%; left: 54%; }
+.region-central { top: 60%; left: 50%; }
+.region-east { top: 55%; left: 70%; }
+.region-north { top: 35%; left: 50%; }
+.region-south { top: 75%; left: 50%; }
+.region-southeast { top: 70%; left: 65%; }
+.region-southwest { top: 75%; left: 35%; }
+.region-west { top: 60%; left: 25%; }
+
