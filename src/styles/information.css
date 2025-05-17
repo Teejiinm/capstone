@@ -1,4 +1,122 @@
-/* 지역 색상은 그대로 */
+/* ========== 공통 ========== */
+body {
+  font-family: sans-serif;
+  color: #000;
+}
+
+.information-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* ========== 메인 섹션 제목: 큰 제목 + 파란 밑줄 ========== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin: 40px 0 24px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: blue;
+  border-radius: 2px;
+}
+
+/* ========== 소제목 (밑줄 없음, 작고 검정) ========== */
+.section-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
+}
+
+/* ========== 날씨 섹션 ========== */
+.weather-section {
+  flex: 1;
+  max-width: 45%;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.weather-box {
+  background: #fff;
+  border: 2px solid blue;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.weather-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+}
+
+.weather-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.month {
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #000;
+}
+
+.temp {
+  color: blue;
+  font-weight: 800;
+}
+
+/* ========== 지도 섹션 ========== */
+.map-section {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mongolia-map {
+  width: 100%;
+  height: auto;
+}
+
+.mongolia-map path {
+  stroke: white;
+  stroke-width: 1;
+  transition: filter 0.2s ease-in-out, stroke 0.2s ease-in-out;
+}
+
+/* 지도 영역 색상 */
 .mongolia-map .region-capital { fill: #ff6f61; }
 .mongolia-map .region-central { fill: #fbbc04; }
 .mongolia-map .region-east { fill: #34a853; }
@@ -8,70 +126,95 @@
 .mongolia-map .region-southwest { fill: #a142f4; }
 .mongolia-map .region-west { fill: #00bfa5; }
 
-/* information.css */
-
-.mongolia-map {
-  width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.mongolia-map path {
+.mongolia-map .region-capital:hover,
+.mongolia-map .region-central:hover,
+.mongolia-map .region-east:hover,
+.mongolia-map .region-north:hover,
+.mongolia-map .region-south:hover,
+.mongolia-map .region-southeast:hover,
+.mongolia-map .region-southwest:hover,
+.mongolia-map .region-west:hover {
   stroke: white;
-  stroke-width: 1;
+  stroke-width: 2;
+  filter: brightness(1.2);
 }
 
-.info-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.map-wrapper {
-  position: relative;
-  width: auto;
-  max-width: 100%;
-}
-
-.description {
-  max-width: 800px;
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-
-
-
-/* 지도 사이즈는 SVG에 따라 자동 조절됨 => 건드리지 않음 */
-
-/* region label 텍스트 */
 .region-label {
+  display: none !important;
+}
+
+.region-description-list {
   position: absolute;
-  background: rgba(255, 255, 255, 0.85);
-  color: #0056b3;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+  bottom: 0;
+  right: -120px;
+  width: 200px;
+  height: 180px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1px 1px;
+  user-select: none;
 }
 
-/* 지도 위에서 마우스 올리면 텍스트 표시 */
-.map-wrapper:hover .region-label {
-  opacity: 1;
+.region-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  cursor: default;
+  padding-left: 10px;
 }
 
-/* 위치 지정 */
-.region-capital { top: 55%; left: 54%; }
-.region-central { top: 60%; left: 50%; }
-.region-east { top: 55%; left: 70%; }
-.region-north { top: 35%; left: 50%; }
-.region-south { top: 75%; left: 50%; }
-.region-southeast { top: 70%; left: 65%; }
-.region-southwest { top: 75%; left: 35%; }
-.region-west { top: 60%; left: 25%; }
+.region-item.hovered {
+  color: #000;
+  font-weight: 700;
+}
 
+.color-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== 추가 정보 섹션 ========== */
+.info-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-content {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.section-list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 1rem;
+  color: #444;
+}
+
+.section-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: blue;
+  font-size: 0.9rem;
+}
