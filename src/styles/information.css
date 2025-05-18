@@ -20,7 +20,7 @@ body {
   padding: 0 20px;
 }
 
-/* ========== 메인 섹션 제목: 큰 제목 + 파란 밑줄 ========== */
+/* ========== 메인 섹션 제목 ========== */
 .section-title {
   font-size: 2rem;
   font-weight: 700;
@@ -43,7 +43,6 @@ body {
   border-radius: 2px;
 }
 
-/* ========== 소제목 (밑줄 없음, 작고 검정) ========== */
 .section-subtitle {
   font-size: 2rem;
   font-weight: 500;
@@ -116,7 +115,6 @@ body {
   transition: filter 0.2s ease-in-out, stroke 0.2s ease-in-out;
 }
 
-/* 지도 영역 색상 */
 .mongolia-map .region-capital { fill: #ff6f61; }
 .mongolia-map .region-central { fill: #fbbc04; }
 .mongolia-map .region-east { fill: #34a853; }
@@ -126,14 +124,7 @@ body {
 .mongolia-map .region-southwest { fill: #a142f4; }
 .mongolia-map .region-west { fill: #00bfa5; }
 
-.mongolia-map .region-capital:hover,
-.mongolia-map .region-central:hover,
-.mongolia-map .region-east:hover,
-.mongolia-map .region-north:hover,
-.mongolia-map .region-south:hover,
-.mongolia-map .region-southeast:hover,
-.mongolia-map .region-southwest:hover,
-.mongolia-map .region-west:hover {
+.mongolia-map path:hover {
   stroke: white;
   stroke-width: 2;
   filter: brightness(1.2);
@@ -217,4 +208,140 @@ body {
   left: 0;
   color: blue;
   font-size: 0.9rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;    /* 가로 중앙 정렬 */
+  gap: 1rem;
+  min-height: 300px;
+  overflow: visible; /* 버튼이 밖으로 나가도 보이게 */
+}
+
+/* 캐러셀 아이템 그룹 - 가로 flex, 중앙 정렬 */
+.carousel-items {
+  display: flex;
+  justify-content: center; /* 카드 중앙 정렬 핵심 */
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  overflow: visible; /* 스크롤 숨김 대신 visible */
+  padding: 2rem 0;
+  scrollbar-width: none;
+}
+
+.carousel-items::-webkit-scrollbar {
+  display: none;
+}
+
+/* 카드 */
+.food-card {
+  flex: 0 0 280px;
+  height: 210px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  background: #eee; /* 배경 살짝 넣으면 위치 파악 쉬움 */
+}
+
+/* 이미지 */
+.food-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 가운데 카드 */
+.food-card.center {
+  transform: scale(1.15);
+  z-index: 3;
+}
+
+/* 가운데 카드 이미지 */
+.food-card.center img {
+  border-radius: 12px;
+}
+
+/* 옆 카드 */
+.food-card.side {
+  transform: scale(0.9);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* 숨김 */
+.food-card.hidden {
+  display: none;
+}
+
+/* 텍스트 */
+.food-name,
+.food-desc {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  color: white;
+  opacity: 0;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease;
+}
+
+.food-name {
+  bottom: 45px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.food-desc {
+  bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* 호버 */
+.food-card.center:hover img {
+  opacity: 0.7;
+}
+
+.food-card.center:hover .food-name,
+.food-card.center:hover .food-desc {
+  color: black;
+  opacity: 1;
+  text-shadow: none;
+}
+
+/* 네비 버튼 */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+.nav-btn.left:hover,
+.nav-btn.right:hover {
+  color: blue;
 }
