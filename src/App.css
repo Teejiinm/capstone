@@ -47,6 +47,9 @@ ul {
   border-radius: 50px !important;
   padding: 0.4rem 1.5rem !important;
 }
+.primary__btn:hover {
+ background: black !important;
+}
 
 .primary__btn a {
   font-size: 1.1rem;

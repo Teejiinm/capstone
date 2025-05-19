@@ -1,0 +1,347 @@
+/* ========== 공통 ========== */
+body {
+  font-family: sans-serif;
+  color: #000;
+}
+
+.information-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* ========== 메인 섹션 제목 ========== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin: 40px 0 24px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: blue;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
+}
+
+/* ========== 날씨 섹션 ========== */
+.weather-section {
+  flex: 1;
+  max-width: 45%;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.weather-box {
+  background: #fff;
+  border: 2px solid blue;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.weather-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+}
+
+.weather-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.month {
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #000;
+}
+
+.temp {
+  color: blue;
+  font-weight: 800;
+}
+
+/* ========== 지도 섹션 ========== */
+.map-section {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mongolia-map {
+  width: 100%;
+  height: auto;
+}
+
+.mongolia-map path {
+  stroke: white;
+  stroke-width: 1;
+  transition: filter 0.2s ease-in-out, stroke 0.2s ease-in-out;
+}
+
+.mongolia-map .region-capital { fill: #ff6f61; }
+.mongolia-map .region-central { fill: #fbbc04; }
+.mongolia-map .region-east { fill: #34a853; }
+.mongolia-map .region-north { fill: #4285f4; }
+.mongolia-map .region-south { fill: #ea4335; }
+.mongolia-map .region-southeast { fill: #f9ab00; }
+.mongolia-map .region-southwest { fill: #a142f4; }
+.mongolia-map .region-west { fill: #00bfa5; }
+
+.mongolia-map path:hover {
+  stroke: white;
+  stroke-width: 2;
+  filter: brightness(1.2);
+}
+
+.region-label {
+  display: none !important;
+}
+
+.region-description-list {
+  position: absolute;
+  bottom: 0;
+  right: -120px;
+  width: 200px;
+  height: 180px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1px 1px;
+  user-select: none;
+}
+
+.region-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  cursor: default;
+  padding-left: 10px;
+}
+
+.region-item.hovered {
+  color: #000;
+  font-weight: 700;
+}
+
+.color-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== 추가 정보 섹션 ========== */
+.info-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-content {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.section-list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 1rem;
+  color: #444;
+}
+
+.section-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: blue;
+  font-size: 0.9rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;    /* 가로 중앙 정렬 */
+  gap: 1rem;
+  min-height: 300px;
+  overflow: visible; /* 버튼이 밖으로 나가도 보이게 */
+}
+
+/* 캐러셀 아이템 그룹 - 가로 flex, 중앙 정렬 */
+.carousel-items {
+  display: flex;
+  justify-content: center; /* 카드 중앙 정렬 핵심 */
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  overflow: visible; /* 스크롤 숨김 대신 visible */
+  padding: 2rem 0;
+  scrollbar-width: none;
+}
+
+.carousel-items::-webkit-scrollbar {
+  display: none;
+}
+
+/* 카드 */
+.food-card {
+  flex: 0 0 280px;
+  height: 210px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  background: #eee; /* 배경 살짝 넣으면 위치 파악 쉬움 */
+}
+
+/* 이미지 */
+.food-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 가운데 카드 */
+.food-card.center {
+  transform: scale(1.15);
+  z-index: 3;
+}
+
+/* 가운데 카드 이미지 */
+.food-card.center img {
+  border-radius: 12px;
+}
+
+/* 옆 카드 */
+.food-card.side {
+  transform: scale(0.9);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* 숨김 */
+.food-card.hidden {
+  display: none;
+}
+
+/* 텍스트 */
+.food-name,
+.food-desc {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  color: white;
+  opacity: 0;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease;
+}
+
+.food-name {
+  bottom: 45px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.food-desc {
+  bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* 호버 */
+.food-card.center:hover img {
+  opacity: 0.7;
+}
+
+.food-card.center:hover .food-name,
+.food-card.center:hover .food-desc {
+  color: black;
+  opacity: 1;
+  text-shadow: none;
+}
+
+/* 네비 버튼 */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+.nav-btn.left:hover,
+.nav-btn.right:hover {
+  color: blue;
+}

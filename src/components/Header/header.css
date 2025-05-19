@@ -60,3 +60,17 @@
     box-shadow: 3px 3px 8px -3px #ddd;
     z-index: 999;
 }
+
+.primary__btn {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.primary__btn:hover {
+    background: black;
+};
+  

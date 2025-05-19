@@ -1,17 +1,43 @@
 .common__section {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-    url("../assets/images/tour.jpg") no-repeat center center;
-    background-size: cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+              url("../assets/images/tour.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+
+/* CommonSection title styling */
 .common__section h1 {
-    font-size: 2.5rem;
-    color: #fff
+    font-size: 3rem;  /* Adjust this value as per your needs */
+    color: #fff;  /* Keep the color white (or adjust accordingly) */
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 
+/* 겹치는 검색바 스타일 */
+.searchbar-overlay {
+  position: absolute;
+  bottom: -40px; /* 배경 아래쪽에 겹쳐서 배치 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+/* SearchBar 너비 조정 */
+.search__bar {
+  background-color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }

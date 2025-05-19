@@ -4,7 +4,7 @@
     box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px;
     width: max-content;
     margin-top: 50px;
-
+    background-color: #fff; /* Optional: makes inputs stand out */
 }
 
 .form__group {
@@ -16,25 +16,41 @@
     border: none;
     color: var(--heading-color);
     font-size: 0.9rem;
-    
+    padding: 0.2rem 0.5rem;
+    background-color: transparent;
+    width: 100%;
 }
+
+.form__group input[type="date"] {
+    /* Optional: improves cross-browser appearance */
+    font-size: 0.9rem;
+    padding-right: 0.5rem;
+}
+
 .form__group input:focus {
     outline: none;
 }
 
 .form__group h6 {
     margin-bottom: 0;
+    font-size: 0.85rem;
+    color: var(--heading-color);
 }
 
 .form__group-fast {
-    border-right: 2px solid #ddd;
+    border-right: 2px solid black;
 }
 
-.search__icon i{
+.search__icon i {
     font-size: 1.6rem;
     padding: 0.5rem;
     background: var(--secondary-color);
     color: #fff;
     border-radius: 10px 5px 10px 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search__icon i:hover {
+    background: blue/* Optional: hover effect */
 }
