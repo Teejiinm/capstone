@@ -4,28 +4,73 @@ import jwt from 'jsonwebtoken';
 
 export const register = async (req, res) => {
     try{
+
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(req.body.password, salt);
+
         const newUser = new User({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: hash,
             photo: req.body.photo,
         })
 
         await newUser.save();
+
         res.status(200).json({
             success: true,
             message: "User created"})
-    } catch(err) {}
-    res
-      .status(500)
-      .json({
-             success: false,
-             message: "Error creating user. Try again",
-    });
+    } catch (err) {
+        console.error('Registration error:', err);
+        return res.status(500).json({
+            success: false,
+            message: 'Error creating user. Try again',
+        });
+    }
 };
 
 export const login = async (req, res) => {
-    try{
+    const { email, password } = req.body;
 
-    } catch(err) {}
+    try{
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found',
+            });
+        }
+        const checkCorrectPassword = await bcrypt.compare(req.body.password, user.password);
+        if (!checkCorrectPassword) {
+            return res.status(401).json({
+                success: false,
+                message: 'Incorrect email or password',
+            });
+        }
+
+        const {password, role, ...rest} = user._doc;
+
+        const token = jwt.sign(
+            { id: user._id, role: user.role }, 
+            process.env.JWT_SECRET, 
+            { expiresIn: '15d' }
+        );
+
+        res.cookie('access_token', token, {
+            http0nly: true,
+            expires:token.expiresIn
+        })
+        .status(200).json({
+            token,
+            data: { ...rest},
+            role,
+        });
+        
+
+    } catch(err) {
+        res.status(500).json({
+                success: false,
+                message: 'Failed to login',
+            });
+    }
 };
