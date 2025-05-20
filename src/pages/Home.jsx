@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Subtitle from "../shared/Subtitle";
 
 import { Container, Row, Col } from 'reactstrap';
-import heroImg from "../assets/images/IMG_4102.jpg";
 import ServiceCard from "../services/ServiceCard";
 import BlogCard from "../shared/BlogCard";  // Import BlogCard directly
 import FeaturedTourList from "../components/FeaturedTourList/FeaturedTourList";

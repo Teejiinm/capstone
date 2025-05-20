@@ -4,15 +4,33 @@ body {
   color: #000;
 }
 
-/* 전체 제목 */
+
+
 .section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 40px 0 24px;
   position: relative;
-  display: block; /* block 처리로 단독 줄 */
+  display: block;
+  width: 100%;  /* 전체 너비로 통일 */
+  text-align: center;
+  margin-top: 70px;
+  font-weight: 700;
 }
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 15%; /* 가운데 정렬 시 left 조절 */
+  width: 70%;  /* 밑줄 길이 일정 */
+  height: 5px;
+  background-color: blue;
+  border-radius: 2px;
+}
+.section-title::after {
+  width: 350px; /* 고정 너비 */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 /* 섹션 박스 좌우 배치 */
 .information-container {
@@ -28,6 +46,7 @@ body {
 /* 반반 너비 설정 */
 .weather-section, .map-section {
   width: 50%;
+  margin-top: 40px;
 }
 
 .info-container {
@@ -43,16 +62,7 @@ body {
 
 /* ========== 메인 섹션 제목 ========== */
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: blue;
-  border-radius: 2px;
-}
+
 
 .section-subtitle {
   font-size: 2rem;
@@ -153,9 +163,9 @@ body {
 .region-description-list {
   position: absolute;
   bottom: 0;
-  right: -120px;
+  right: -90px;
   width: 200px;
-  height: 180px;
+  height: 140px;
   padding: 12px;
   border-radius: 8px;
   font-size: 14px;
@@ -209,6 +219,7 @@ body {
   color: #333;
   margin-bottom: 20px;
   line-height: 1.6;
+  margin-top: 40px;
 }
 
 .section-list {
@@ -431,7 +442,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 16px;
-  border: 1.5px solid blue;
+  border: 1.5px solid black;
   border-radius: 8px;
   min-width: 350px;
   width: 350px;
@@ -443,7 +454,7 @@ body {
 .todo-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 255, 0.15); /* blue tint shadow */
-  border-color: #0044cc; /* darker blue on hover */
+  border-color: blue; /* darker blue on hover */
 }
 
 
@@ -471,7 +482,7 @@ body {
 
 .todo-icon {
   font-size: 20px;
-  color: black;
+  color: blue;
 }
 
 .todo-title {

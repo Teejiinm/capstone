@@ -1,109 +1,106 @@
+.tour__img {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .tour__img img {
-    height: 100%;
-    width: 100%;
-    border-radius: 5px 5px 0 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.tour__img span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: max-content;
+  height: max-content;
+  z-index: 10;
+  background: blue;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px 0 0 0;
 }
 
 .card {
-    border: none !important;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-    border-radius: 12px;
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  border-radius: 12px;
 }
 
-.tour__img{
-    position: relative;
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    
-    
+.card__top span i {
+  color: black;
 }
 
-.tour__img span{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: max-content;
-    height: max-content;
-    z-index: 10;
-    background: blue;
-    color: #fff;
-    padding: 0.3rem 0.5rem;
-    border-radius: 3px 0 0 0;
+.card__top span h3 {
+  color: orange;
 }
 
-.card__top span i{
-    color: black;
-
-}
-.card__top span h3{
-    color: orange;
-
+.tour__rating {
+  font-size: 0.9rem;
+  color: var(--text-color);
 }
 
-.tour__rating{
-    font-size: .9rem;
-    color: var(text-color);
-
+.tour__location {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
-.tour__location{
-    color: var(--heading-color);
-    font-weight: 500;
-    font-size: 0.9rem;
+.tour__rating h3,
+.tour__location i {
+  font-size: 1rem;
 }
 
-.tour__rating h3, .tour__location i{
-    font-size: 1rem;
+.tour__title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
-.tour__title{
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    cursor: pointer;
+.tour__title a {
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: 0.3s;
 }
 
-.tour__title a{
-    text-decoration: none;
-    color: var(--heading-color);
-    transition: .3s;
+.tour__title a:hover {
+  color: blue;
 }
 
-.tour__title a:hover{
-    color: blue;
+.card__bottom h5 {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.card__bottom h5{
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    font-weight: 700;
+.card__bottom h5 span {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.8rem;
 }
 
-.card__bottom h5 span{
-    font-weight: 500;
-    color: var(text-color);
-    font-size: 0.8rem;
-}
-
+/* Booking 버튼 스타일 */
 .booking__btn {
-    margin-top: 0.3rem; /* Reduced from 0.8rem to move the button up */
-    font-size: 1.1rem;
-    cursor: pointer;
+  margin-top: 0.3rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.booking__btn {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
 }
 
-.booking__btn a {
-    padding: 0.5rem 0.6rem; /* Adjusted padding */
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 0.9rem;
-    text-decoration: none;
-}
 
-.booking__btn a:hover {
-    background-color: blue;
-    color: #fff;
+.booking__btn:hover {
+  background-color: blue !important;
 }

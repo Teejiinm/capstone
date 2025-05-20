@@ -10,7 +10,7 @@ const Tours = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
 
-  const toursPerPage = 4;
+  const toursPerPage = 8;
 
   useEffect(() => {
     const pages = Math.ceil(tourData.length / toursPerPage);
