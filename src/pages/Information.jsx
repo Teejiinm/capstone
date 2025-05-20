@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ReactComponent as BlankMap } from "../assets/BlankMongolia.svg";
 import "../styles/information.css";
 
@@ -7,6 +8,67 @@ import buuz from "../assets/images/buuz.jpg";
 import khorkhog from "../assets/images/khorkhog.jpg";
 import suuteitsai from "../assets/images/suutei tsai.jpg";
 import airag from "../assets/images/airag.jpg";
+import aaruul from "../assets/images/aaruul.webp";
+import khuushuur from "../assets/images/khuushuur.jpg";
+import tsuivan from "../assets/images/tsuivan.jpg";
+import guriltaiShol from "../assets/images/guriltaishul.png";
+import boortsog from "../assets/images/boortsog.jpg";
+import tolgoi from "../assets/images/tolgoi.jpg";
+import tarag from "../assets/images/tarag.jpg";
+import shimiinArkhi from "../assets/images/shimiin-arkhi.webp";
+import horse from "../assets/images/horse.jpg";
+import ger from "../assets/images/ger.jpg";
+import camelride from "../assets/images/camelride.jpg";
+import dog from "../assets/images/dog.jpeg";
+import wrestling from "../assets/images/wrestling.jpg";
+import kazakh from "../assets/images/kazakh.jpg";
+import {
+  FaHorse,
+  FaCampground,
+  FaMountain,
+  FaFeatherAlt,
+  FaFistRaised,
+  FaSnowflake,
+} from "react-icons/fa";
+
+const todoItems = [
+  {
+    icon: <FaHorse className="text-blue-500" />,
+    title: "Ride a Horse",
+    desc: "Feel the freedom of riding through Mongolia’s vast open grasslands like a true nomad.",
+    image: horse,
+  },
+  {
+    icon: <FaCampground className="text-blue-500" />,
+    title: "Stay in a Ger (Yurt)",
+    desc: "Sleep in a traditional nomadic tent, warmed by a stove and surrounded by silence and stars.",
+    image: ger,
+  },
+  {
+    icon: <FaMountain className="text-blue-500" />,
+    title: "Camel Riding",
+    desc: "Traverse dramatic sand dunes on a two-humped Bactrian camel, native to Mongolia.",
+    image: camelride,
+  },
+  {
+    icon: <FaFeatherAlt className="text-blue-500" />,
+    title: "Eagle Hunting ",
+    desc: "Watch Kazakh hunters and their golden eagles in action — a rare and ancient tradition.",
+    image: kazakh,
+  },
+  {
+    icon: <FaFistRaised className="text-blue-500" />,
+    title: "Mongolian Wrestling",
+    desc: "Learn the basics of Bokh, Mongolia’s national sport, guided by local wrestlers.",
+    image: wrestling,
+  },
+  {
+    icon: <FaSnowflake className="text-blue-500" />,
+    title: "Winter Dog Sledding",
+    desc: "Glide through Mongolia’s snowy wilderness on a sled pulled by powerful Mongolian dogs.",
+    image: dog,
+  },
+];
 
 const weatherData = [
   { month: "Jan", icon: "❄️", temp: "-20°C" },
@@ -46,15 +108,29 @@ const regionColors = {
 };
 
 const foodItems = [
-  { name: "Khorkhog", desc: "Traditional barbecue cooked with hot stones.", img: khorkhog },
-  { name: "Buuz", desc: "Steamed meat dumplings.", img: buuz },
-  { name: "Airag", desc: "Fermented mare’s milk.", img: airag },
-  { name: "Suutei Tsai", desc: "Salty milk tea.", img: suuteitsai },
+  { name: "Khorkhog", desc: "...", img: khorkhog },
+  { name: "Buuz", desc: "...", img: buuz },
+  { name: "Khuushuur", desc: "...", img: khuushuur },
+  { name: "Tsuivan", desc: "...", img: tsuivan },
+  { name: "Guriltai Shol", desc: "...", img: guriltaiShol },
+  { name: "Aaruul", desc: "...", img: aaruul },
+  { name: "Boortsog", desc: "...", img: boortsog },
+  { name: "Tolgoi", desc: "...", img: tolgoi },
+  { name: "Tarag", desc: "...", img: tarag },
+  { name: "Shimiin Arkhi", desc: "...", img: shimiinArkhi },
+  { name: "Airag", desc: "...", img: airag },
+  { name: "Suutei Tsai", desc: "...", img: suuteitsai },
 ];
 
 export default function Information() {
   const [hoverRegion, setHoverRegion] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation();
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleMouseOver = (e) => {
     const regionClass = Array.from(e.target.classList).find((cls) =>
@@ -73,115 +149,179 @@ export default function Information() {
     setCurrentIndex((prev) => (prev === foodItems.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    const interval = setInterval(handleNext, 3000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="info-container">
-      {/* Weather and Geography */}
-      <h2 className="section-title">Weather and Geography</h2>
-      <div className="information-container">
-        <div className="weather-section">
-          <p className="section-subtitle">Mongolian Weather</p>
-          <p className="weather-subtitle">
-            Mongolia’s weather has cold winters and warm summers, with clear skies and dry air across steppes, deserts, and mountains.
-          </p>
-          <div className="weather-grid">
-            {weatherData.map((item) => (
-              <div className="weather-box" key={item.month}>
-                <div className="weather-icon">{item.icon}</div>
-                <div className="month">{item.month}</div>
-                <div className="temp">{item.temp}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <>
+      
+  <section id="weather" className="info-container">
+    {/* 제목은 위에 고정 */}
+    <h2 className="section-title">Weather and Geography</h2>
 
-        <div className="map-section">
-          <p className="section-subtitle">Mongolian Geography</p>
-          <p className="geography-subtitle">
-            Mongolia’s terrain ranges from the Gobi Desert in the south to mountainous regions in the west and lush forests and lakes in the north.
-          </p>
-          <div className="map-wrapper">
-            <BlankMap
-              className="mongolia-map"
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-            />
-          </div>
-          <div className="region-description-list">
-            {Object.entries(regionInfo).map(([key, name]) => (
-              <div key={key} className={`region-item ${hoverRegion === key ? "hovered" : ""}`}>
-                <span className="color-circle" style={{ background: regionColors[key] }}></span>
-                {name}
-              </div>
-            ))}
-          </div>
+    {/* 날씨 & 지리 정보를 좌우로 나누기 */}
+    <div className="information-container">
+      {/* Weather Section - 오른쪽 */}
+      <div className="weather-section">
+        <p className="section-subtitle">Mongolian Weather</p>
+        <p className="weather-subtitle">...</p>
+        <div className="weather-grid">
+          {weatherData.map((item) => (
+            <div className="weather-box" key={item.month}>
+              <div className="weather-icon">{item.icon}</div>
+              <div className="month">{item.month}</div>
+              <div className="temp">{item.temp}</div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Foods and Drinks */}
-      <div className="info-section">
-        <h2 className="section-title">Foods and Drinks</h2>
-        <p className="section-content">
-          Mongolian cuisine features hearty dishes often centered around meat and dairy. Here are some local favorites:
-        </p>
+      {/* Geography Section - 왼쪽 */}
+      <div className="map-section">
+        <p className="section-subtitle">Mongolian Geography</p>
+        <p className="geography-subtitle">...</p>
+        <div className="map-wrapper">
+          <BlankMap
+            className="mongolia-map"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          />
+        </div>
+        <div className="region-description-list">
+          {Object.entries(regionInfo).map(([key, name]) => (
+            <div
+              key={key}
+              className={`region-item ${hoverRegion === key ? "hovered" : ""}`}
+            >
+              <span
+                className="color-circle"
+                style={{ background: regionColors[key] }}
+              ></span>
+              {name}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div className="carousel-wrapper">
-          <button className="nav-btn left" onClick={handlePrev}>
-            <FaChevronLeft />
-          </button>
 
-          <div className="carousel-items">
-            {foodItems.map((item, idx) => {
-              const isCenter = idx === currentIndex;
-              const isLeft = idx === (currentIndex - 1 + foodItems.length) % foodItems.length;
-              const isRight = idx === (currentIndex + 1) % foodItems.length;
+  <section id="food" className="info-section">
+    <h2 className="section-title">Foods and Drinks</h2>
+    <p className="section-content">
+      Mongolian cuisine is rooted in meat, dairy, and flour, reflecting its nomadic heritage. Lamb, beef, and goat are common, prepared in hearty and simple ways. Staples like buuz (steamed dumplings) and khuushuur (fried meat pies) are everyday favorites. Dairy products such as aaruul and fermented mare’s milk (airag) are also key parts of the diet. Here are a few signature Mongolian dishes:
+    </p>
 
-              let className = "food-card hidden";
-              if (isCenter) className = "food-card center";
-              else if (isLeft || isRight) className = "food-card side";
+    <div className="carousel-wrapper">
+      <button className="nav-btn left" onClick={handlePrev}>
+        <FaChevronLeft />
+      </button>
 
-              return (
-                <div key={idx} className={className} onClick={() => setCurrentIndex(idx)}>
-                  <img src={item.img} alt={item.name} />
-                  {isCenter && (
-                    <>
-                      <div className="food-name">{item.name}</div>
-                      <div className="food-desc">{item.desc}</div>
-                    </>
-                  )}
+      <div className="carousel-items">
+        {foodItems.map((item, idx) => {
+          const isCenter = idx === currentIndex;
+          const isLeft = idx === (currentIndex - 1 + foodItems.length) % foodItems.length;
+          const isRight = idx === (currentIndex + 1) % foodItems.length;
+
+          let className = "food-card hidden";
+          if (isCenter) className = "food-card center";
+          else if (isLeft || isRight) className = "food-card side";
+
+          return (
+            <div key={idx} className={className} onClick={() => setCurrentIndex(idx)}>
+              <img src={item.img} alt={item.name} />
+              {isCenter && (
+                <div className="food-info">
+                  <div className="food-name">{item.name}</div>
+                  <div className="food-desc">{item.desc}</div>
                 </div>
-              );
-            })}
-          </div>
-
-          <button className="nav-btn right" onClick={handleNext}>
-            <FaChevronRight />
-          </button>
-        </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
-      {/* Packing List */}
-      <div className="info-section">
-        <h2 className="section-title">Packing List</h2>
-        <ul className="section-list">
-          <li>Warm layers for cold nights</li>
-          <li>Light clothing for summer</li>
-          <li>Comfortable shoes for walking</li>
-          <li>Sunscreen and lip balm</li>
-          <li>Reusable water bottle</li>
+      <button className="nav-btn right" onClick={handleNext}>
+        <FaChevronRight />
+      </button>
+    </div>
+  </section>
+
+  <section id="packing" className="info-section">
+    <h2 className="section-title">Packing List</h2>
+    <p className="section-content" style={{ marginBottom: '40px' }}>
+      Traveling to Mongolia requires preparing for diverse weather, from hot summers to cold nights. Lightweight, breathable clothes are essential for summer, while warm layers are needed for chilly evenings. Durable hiking boots and a good sleeping bag will help with outdoor adventures. Don’t forget sun protection like hats and sunscreen due to strong UV exposure. Also, pack reusable water bottles and basic first aid supplies to stay comfortable and safe on your trip.
+    </p>
+
+    <div className="packing-grid">
+      <div className="packing-box">
+        <h2>☀️ Hot Weather Packing List</h2>
+        <p>(Summer in Mongolia)</p>
+        <ul>
+          <li>👕 Light, breathable clothes (cotton or linen)</li>
+          <li>🧢 Wide-brimmed hat or cap for sun protection</li>
+          <li>🕶️ Sunglasses and high-SPF sunscreen</li>
+          <li>💧 Reusable water bottle</li>
+          <li>👟 Comfortable walking shoes or sandals</li>
+          <li>🦟 Insect repellent (especially for rural areas)</li>
+          <li>🧣 Light scarf or shawl for dust or sun</li>
         </ul>
       </div>
 
-      {/* To-Do List */}
-      <div className="info-section">
-        <h2 className="section-title">To-Do List in Mongolia</h2>
-        <ul className="section-list">
-          <li>Ride a horse across the steppe</li>
-          <li>Visit a nomadic family</li>
-          <li>Explore the Gobi Desert</li>
-          <li>Relax by Lake Khövsgöl</li>
-          <li>Discover history at Karakorum</li>
+      <div className="packing-box">
+        <h2>❄️ Cold Weather Packing List</h2>
+        <p>(Winter in Mongolia)</p>
+        <ul>
+          <li>🧦 Thermal underwear (base layer)</li>
+          <li>🧥 Down or insulated winter jacket</li>
+          <li>🧊 Windproof outer shell or parka</li>
+          <li>🧢 Warm hat and scarf</li>
+          <li>🧤 Gloves or mittens (preferably waterproof)</li>
+          <li>🥾 Wool socks and insulated boots</li>
+          <li>💄 Lip balm and moisturizer for dry air</li>
         </ul>
       </div>
     </div>
-  );
+  </section>
+
+  <section id="todo" className="info-section">
+    <h2 className="section-title">To-Do List in Mongolia</h2>
+    <p className="section-content" style={{ marginBottom: '40px' }}>
+      Mongolia offers rare adventures you won’t find anywhere else. Ride horses across the steppe, sleep in a traditional ger, or explore the Gobi Desert by camel. Watch eagle hunters in action or try traditional wrestling. Winter brings unique thrills like dog sledding in the snow. Here are a few must-do activities in Mongolia:
+    </p>
+    <div className="todo-grid">
+      {todoItems.map((item, index) => (
+        <div className="todo-card" key={index}>
+          <img src={item.image} alt={item.title} className="todo-image" />
+          <div className="todo-content">
+            <div className="todo-header">
+              <div className="todo-icon">{item.icon}</div>
+              <h3 className="todo-title">{item.title}</h3>
+            </div>
+            <p className="todo-desc">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+
+       
+      
+    </>
+    
+    );
 }
