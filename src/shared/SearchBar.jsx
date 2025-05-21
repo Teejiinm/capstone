@@ -6,22 +6,22 @@ import { BASE_URL } from "../utils/config";
 import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
-    const locationRef = useRef('');
+    const cityRef = useRef('');
     const distanceRef = useRef('');
     const maxGroupSizeRef = useRef(0);
     const navigate = useNavigate();
 
     const searchHandler = async () => {
-        const location = locationRef.current.value;
+        const city = cityRef.current.value;
         const distance = distanceRef.current.value;
         const maxGroupSize = maxGroupSizeRef.current.value;
 
-        if (location === "" || distance === "" || maxGroupSize === "") {
+        if (city === "" || distance === "" || maxGroupSize === "") {
             return alert('All fields are required!');
         }
 
        const res = await fetch(
-           `${BASE_URL}/tours/search/getToursBySearch?location=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`
+           `${BASE_URL}/tours/search/getTourBySearch?city=${city}&distance=${distance}&maxGroupSize=${maxGroupSize}`
        );
 
        if(!res.ok) {
@@ -30,7 +30,7 @@ const SearchBar = () => {
 
        const result = await res.json();
 
-       navigate(`/tours/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
+       navigate(`/tours/search?city=${city}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
            { state: result.data ,}
        );
 
@@ -44,7 +44,7 @@ const SearchBar = () => {
                         <span><i className="ri-map-pin-line"></i></span>
                         <div>
                             <h6>Location</h6>
-                            <input type="text" placeholder="Where are you going?" ref={locationRef} />
+                            <input type="text" placeholder="Where are you going?" ref={cityRef} />
                         </div>
                     </FormGroup>
 

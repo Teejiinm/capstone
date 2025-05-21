@@ -13,14 +13,23 @@ const location = useLocation();
 
 const [data] = useState(location.state);
 
-console.log(data);
 
     return (
     <>
         <CommonSection title="Tour Search Results" />
         <section> 
              <Container>
-                <Row></Row>
+                <Row>
+                    {data.length === 0 ?(
+                        <h4 className="text-center mt-5">No tours found</h4>
+                    ) : (
+                        data?.map(tour => (
+                            <Col lg='3' className="mb-4" key={tour._id}>
+                                <TourCard tour={tour} /> 
+                            </Col>   
+                        ))
+                    )}
+                </Row>
              </Container> 
         </section>
     </>
