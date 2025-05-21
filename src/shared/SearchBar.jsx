@@ -2,18 +2,38 @@ import React, { useRef } from "react";
 import "./search-bar.css";
 import { Col, Form, FormGroup } from "reactstrap";
 
+import { BASE_URL } from "../utils/config";
+import { useNavigate } from "react-router-dom";
+
 const SearchBar = () => {
     const locationRef = useRef('');
-    const dateRef = useRef('');
-    const peopleRef = useRef(0);
+    const distanceRef = useRef('');
+    const maxGroupSizeRef = useRef(0);
+    const navigate = useNavigate();
 
-    const searchHandler = () => {
+    const searchHandler = async () => {
         const location = locationRef.current.value;
-        const date = dateRef.current.value;
-        const people = peopleRef.current.value;
+        const distance = distanceRef.current.value;
+        const maxGroupSize = maxGroupSizeRef.current.value;
 
-        if (location === "" || date === "" || people === "")
+        if (location === "" || distance === "" || maxGroupSize === "") {
             return alert('All fields are required!');
+        }
+
+       const res = await fetch(
+           `${BASE_URL}/tours/search/getToursBySearch?location=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`
+       );
+
+       if(!res.ok) {
+           alert('Something went wrong!');
+       }
+
+       const result = await res.json();
+
+       navigate(`/tours/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
+           { state: result.data ,}
+       );
+
     };
 
     return (
@@ -31,8 +51,8 @@ const SearchBar = () => {
                     <FormGroup className="d-flex gap-3 form__group form__group-fast">
                         <span><i className="ri-calendar-line"></i></span>
                         <div>
-                            <h6>Date</h6>
-                            <input type="date" ref={dateRef} />
+                            <h6>Distance</h6>
+                            <input type="text" placeholder="Distance in km" ref={distanceRef} />
                         </div>
                     </FormGroup>
 
@@ -40,7 +60,7 @@ const SearchBar = () => {
                         <span><i className="ri-group-line"></i></span>
                         <div>
                             <h6>People</h6>
-                            <input type="number" placeholder="0" ref={peopleRef} />
+                            <input type="number" placeholder="0" ref={maxGroupSizeRef} />
                         </div>
                     </FormGroup>
 

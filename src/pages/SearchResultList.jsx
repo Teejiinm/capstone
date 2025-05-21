@@ -1,7 +1,30 @@
-import React from "react";
+import React, {useState}from "react";
+
+import CommonSection from "../shared/CommonSection";
+import { Container, Row, Col } from "reactstrap";
+
+import { useLocation } from "react-router-dom";
+import TourCard from "../shared/TourCard";
+import useFetch from "../hooks/useFetch";
+import { BASE_URL } from "../utils/config";
 
 const SearchResultList = () => {
-    return <div>SearchResultList</div>;
+const location = useLocation();
+
+const [data] = useState(location.state);
+
+console.log(data);
+
+    return (
+    <>
+        <CommonSection title="Tour Search Results" />
+        <section> 
+             <Container>
+                <Row></Row>
+             </Container> 
+        </section>
+    </>
+    );
 
 };
 export default SearchResultList;
