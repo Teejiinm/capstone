@@ -88,7 +88,7 @@ export const SummerFestivalDay1 = () => (
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
         {[chingiskhanstatue2, chingiskhanstatue3, chingiskhanstatue4].map((src, i) => (
-          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", maxWidth: "200px", borderRadius: "8px" }} />
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
         ))}
       </div>
 

@@ -7,7 +7,7 @@ import "./tour-card.css";
 
 const TourCard = ({ tour }) => {
   const navigate = useNavigate();
-  const { _id, title, city, photo, price, featured, reviews } = tour;
+  const { id, title, city, photo, price, featured, reviews } = tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
   return (
@@ -35,27 +35,26 @@ const TourCard = ({ tour }) => {
             </span>
           </div>
 
-          <h5 className="tour__title">
-            <Link to={`/tours/${_id}`}>{title}</Link>
-          </h5>
+    <h5 className="tour__title">
+  <Link to={`/tours/${id}`}>{title}</Link>
+</h5>
 
-          <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
-            <h5>
-              ${price} <span>/per person</span>
-            </h5>
+<div className="card__bottom d-flex align-items-center justify-content-between mt-3">
+  <h5>
+    ${price} <span>/per person</span>
+  </h5>
 
-            {/* 버튼 클릭 시 navigate 처리 */}
-            <button
-              className="btn booking__btn"
-              onClick={() => navigate(`/tours/${_id}`)}
-              type="button"
-            >
-              Book Now
-            </button>
-          </div>
-        </CardBody>
-      </Card>
-    </div>
+  <button
+    className="btn booking__btn"
+    onClick={() => navigate(`/tours/${id}`)}
+    type="button"
+  >
+    Book Now
+  </button>
+</div>
+</CardBody>
+</Card>
+</div>
   );
 };
 

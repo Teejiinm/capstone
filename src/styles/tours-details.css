@@ -1,8 +1,11 @@
-.tour__content img{
+.tour__content img {
     width: 100%;
+    height: 400px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures image fills area without distortion */
     border-radius: 0.5rem;
     margin-bottom: 2.5rem;
 }
+
 
 .tour__info , .tour__reviews{
     border-radius: 0.5rem;

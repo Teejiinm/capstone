@@ -1,11 +1,14 @@
-
 import React, { useState } from "react";
 
 export default function TravelSchedule({ itinerary }) {
-  const [openDay, setOpenDay] = useState(null);
+  const [openDays, setOpenDays] = useState([]);
 
   const toggleDay = (index) => {
-    setOpenDay(openDay === index ? null : index);
+    setOpenDays((prev) =>
+      prev.includes(index)
+        ? prev.filter((i) => i !== index) // 닫기
+        : [...prev, index] // 열기
+    );
   };
 
   if (!itinerary || itinerary.length === 0) return null;
@@ -33,9 +36,9 @@ export default function TravelSchedule({ itinerary }) {
             <div>
               {item.day} | {item.date} | {item.route}
             </div>
-            <div>{openDay === index ? "▲" : "▼"}</div>
+            <div>{openDays.includes(index) ? "▲" : "▼"}</div>
           </div>
-          {openDay === index && item.Component && (
+          {openDays.includes(index) && item.Component && (
             <div style={{ marginTop: "10px", paddingLeft: "10px" }}>
               <item.Component />
             </div>

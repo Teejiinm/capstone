@@ -25,6 +25,7 @@ import kazakh from "../assets/images/kazakh.jpg";
 import hotspring from "../assets/images/hotspring.jpg";
 import hiking from "../assets/images/hiking.webp";
 import motorbike from "../assets/images/motobike.jpg";
+import gedes from "../assets/images/gedes.jpg";
 
 import {
   FaHorse,
@@ -138,13 +139,20 @@ const foodItems = [
   { name: "Khuushuur", desc: "Deep-fried meat pastries with a crispy shell and juicy minced meat inside.", img: khuushuur },
   { name: "Tsuivan", desc: "Stir-fried handmade noodles mixed with meat and vegetables.", img: tsuivan },
   { name: "Guriltai Shol", desc: "A comforting noodle soup made with meat, simple vegetables, and broth.", img: guriltaiShol },
+   { 
+  name: "Gedes", 
+  desc: "Boiled intestines dish made from sheep’s stomach and innards, seasoned lightly and served warm — a traditional nomadic delicacy.", 
+  img: gedes 
+},
+{ name: "Tolgoi", desc: "Boiled sheep's head served as a traditional dish during special ceremonies.", img: tolgoi },
   { name: "Aaruul", desc: "Dried curds made from fermented milk, known for their hard texture and tangy taste.", img: aaruul },
   { name: "Boortsog", desc: "Fried dough snacks that are slightly sweet and often served with tea.", img: boortsog },
-  { name: "Tolgoi", desc: "Boiled sheep's head served as a traditional dish during special ceremonies.", img: tolgoi },
   { name: "Tarag", desc: "Fermented milk similar to yogurt, rich in probiotics and flavor.", img: tarag },
   { name: "Shimiin Arkhi", desc: "A strong Mongolian distilled spirit made from fermented grains or milk.", img: shimiinArkhi },
   { name: "Airag", desc: "Slightly sour, mildly alcoholic drink made from fermented mare’s milk.", img: airag },
-  { name: "Suutei Tsai", desc: "Traditional salted milk tea made with green tea, milk, and a pinch of salt.", img: suuteitsai }
+  { name: "Suutei Tsai", desc: "Traditional salted milk tea made with green tea, milk, and a pinch of salt.", img: suuteitsai },
+  
+
 
 
 ];
