@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBinoculars, FaBus, FaCamera, FaCampground, FaFeatherAlt, FaHorse, FaHotel, FaMosque, FaMountain, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaBinoculars, FaBus, FaCamera, FaCampground, FaFeatherAlt, FaHorse, FaHotel, FaLandmark, FaMapMarkerAlt, FaMosque, FaMountain, FaShoppingBag, FaUsers, FaUtensils } from "react-icons/fa";
 import hotel1 from "../../assets/images/ulgiihotel1.jpg";
 import hotel2 from "../../assets/images/ulgiihotel2.jpg";
 import hotel3 from "../../assets/images/ulgiihotel3.jpg";
@@ -15,6 +15,36 @@ import ulgii3 from "../../assets/images/bazaar1.jpg";
 import bonfire1 from "../../assets/images/bonfire.jpg";
 import bonfire2 from "../../assets/images/star2.webp";
 import bonfire3 from "../../assets/images/bonfire1.jpg";
+import camp1 from "../../assets/images/basecamp1.jpg";
+import camp2 from "../../assets/images/basecamp2.jpg";
+import camp3 from "../../assets/images/basecamp3.jpeg";
+import np1 from "../../assets/images/altainp1.jpg";
+import np2 from "../../assets/images/altainp3.jpg";
+import np3 from "../../assets/images/altainp2.jpg";
+import orgil1 from "../../assets/images/orgil1.jpg";
+import orgil2 from "../../assets/images/orgil2.jpg";
+import orgil3 from "../../assets/images/orgil3.jpg";
+import kazakh1 from "../../assets/images/kazakh1.jpg";
+import kazakh2 from "../../assets/images/kazakh2.jpg";
+import kazakh3 from "../../assets/images/kazakh3.jpg";
+import river1 from "../../assets/images/river1.jpg";
+import river2 from "../../assets/images/river2.jpg";
+import river3 from "../../assets/images/river3.jpg";
+import sukhbaatar1 from "../../assets/images/sukhbaatar1.jpg";
+import sukhbaatar2 from "../../assets/images/sukhbaatar2.jpg";
+import sukhbaatar3 from "../../assets/images/sukhbaatar3.jpg";
+import museum1 from "../../assets/images/museum1.jpg";
+import museum2 from "../../assets/images/museum2.webp";
+import museum3 from "../../assets/images/museum3.jpg";
+import zaisan1 from "../../assets/images/zaisan1.jpg";
+import zaisan2 from "../../assets/images/zaisan2.jpg";
+import zaisan3 from "../../assets/images/zaisan3.webp";
+import ubhotel1 from "../../assets/images/ubhotel1.avif";
+import ubhotel2 from "../../assets/images/ubhotel2.avif";
+import ubhotel3 from "../../assets/images/ubhotel3.jpg";
+import shopping1 from "../../assets/images/shopping1.jpg";
+import shopping2 from "../../assets/images/shopping2.jpg";
+import shopping3 from "../../assets/images/shopping3.jpg";
 
 
 export const AdventureTourDay1 = () => (
@@ -116,7 +146,7 @@ export const AdventureTourDay1 = () => (
 </div>
 
 
-    </div>
+</div>
 
       
       </>
@@ -212,6 +242,11 @@ export const AdventureTourDay3 = () => (
     <FaBinoculars style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Explore Tsagaan Salaa Petroglyph Complex (UNESCO site)</div>
   </div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[np1, np2, np3].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>14:00</div>
@@ -224,12 +259,23 @@ export const AdventureTourDay3 = () => (
     <FaHorse style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>HorseBack to ranger station near Tavan Bogd base camp(20km)</div>
   </div>
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[camp1, camp2, camp3].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>19:00</div>
     <FaCampground style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Set up tent camp and dinner</div>
   </div>
+  <div style={{ marginTop: "30px", padding: "15px 20px", backgroundColor: "#f9f9f9", borderRadius: "10px", borderLeft: "4px solid blue" }}>
+  <div style={{ fontWeight: "bold", fontSize: "16px", marginBottom: "10px" }}>🍽️ Meals of the Day</div>
+  <div>• Breakfast: Hotel Buffet</div>
+  <div>• Lunch: Picnic Lunch</div>
+  <div>• Dinner: Camp Dinner</div>
+</div>
 </div>
 
   </>
@@ -237,17 +283,18 @@ export const AdventureTourDay3 = () => (
 export const AdventureTourDay4 = () => (
   <>
   <div style={{ borderLeft: "2px solid blue", paddingLeft: "20px", marginLeft: "10px", marginTop: "30px", lineHeight: "1.8" }}>
-  <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
-    <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>08:00</div>
-    <FaUtensils style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
-    <div>Breakfast at camp</div>
-  </div>
+  
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>09:00</div>
     <FaMountain style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Trek to Potanin Glacier Viewpoint (16km round-trip)</div>
   </div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[orgil1, orgil2, orgil3].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>13:00</div>
@@ -266,7 +313,38 @@ export const AdventureTourDay4 = () => (
     <FaUsers style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Kazakh cultural evening: meet local family and dinner</div>
   </div>
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[kazakh1, kazakh2, kazakh3].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
+      <div style={{ marginTop: "30px", padding: "15px 20px", backgroundColor: "#f9f9f9", borderRadius: "10px", borderLeft: "4px solid blue" }}>
+  <div style={{ fontWeight: "bold", fontSize: "16px", marginBottom: "10px" }}>🍽️ Meals of the Day</div>
+  <div>• Breakfast: Base Camp</div>
+  <div>• Lunch: Glacier Base</div>
+  <div>• Dinner: Kazakh local dinner</div>
 </div>
+</div>
+    
+    <div style={{
+  marginTop: "30px",
+  padding: "15px 20px",
+  background: "#f9f9f9",
+  borderRadius: "10px",
+  border: "1px solid #ddd"
+}}>
+  <div style={{ fontWeight: "bold", color: "blue", fontSize: "16px", marginBottom: "12px" }}>
+    Optional Activities
+  </div>
+<div style={{ fontWeight: "bold" }}>
+  • Enjoy Kazakh Dombra Music and Dance in Local Family ($10/person)
+</div>
+<div style={{ marginLeft: "10px" }}>
+  Visit a local Kazakh family in Bayan-Ulgii and experience traditional dombra music and folk dance. A warm cultural encounter with music, rhythm, and hospitality.
+</div>
+
+  </div>
+
 
   </>
 );
@@ -274,17 +352,20 @@ export const AdventureTourDay4 = () => (
 export const AdventureTourDay5 = () => (
   <>
   <div style={{ borderLeft: "2px solid blue", paddingLeft: "20px", marginLeft: "10px", marginTop: "30px", lineHeight: "1.8" }}>
-  <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
-    <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>08:00</div>
-    <FaUtensils style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
-    <div>Breakfast at camp</div>
-  </div>
+ 
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>09:00</div>
     <FaHorse style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Travel to White River Valley by Horse(20km)</div>
   </div>
+   <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[river1, river2 , river3].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
+
+
 
   <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
     <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>12:30</div>
@@ -303,6 +384,186 @@ export const AdventureTourDay5 = () => (
     <FaBus style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
     <div>Return to Ulgii City by car(180km)</div>
   </div>
+   <div style={{ marginTop: "30px", padding: "15px 20px", backgroundColor: "#f9f9f9", borderRadius: "10px", borderLeft: "4px solid blue" }}>
+  <div style={{ fontWeight: "bold", fontSize: "16px", marginBottom: "10px" }}>🍽️ Meals of the Day</div>
+  <div>• Breakfast: Base Camp</div>
+  <div>• Lunch: In White River</div>
+  <div>• Dinner: Mongolian BBQ in Ulgii City</div>
 </div>
+</div>
+<div style={{
+  marginTop: "30px",
+  padding: "15px 20px",
+  background: "#f9f9f9",
+  borderRadius: "10px",
+  border: "1px solid #ddd"
+}}>
+  <div style={{ fontWeight: "bold", color: "blue", fontSize: "16px", marginBottom: "12px" }}>
+    Optional Activities
+  </div>
+<div style={{ fontWeight: "bold" }}>
+  • Buy Kazakh Souvenir in Local Bazaar ($20/person)
+</div>
+<div style={{ marginLeft: "10px" }}>
+  Explore the vibrant local bazaar in Bayan-Ulgii and purchase authentic Kazakh souvenirs such as handcrafted items, traditional art, and cultural mementos.
+</div>
+
+
+  </div>
 </>
+);
+
+export const AdventureTourDay6 = () => (
+  <>
+  <div
+      className="flight-info-box"
+      style={{
+        border: "1px solid #eee",
+        borderRadius: "12px",
+        padding: "20px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "#fff",
+        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+        marginTop: "20px",
+      }}
+    >
+       
+  <div>
+    <div style={{ fontWeight: "bold" }}>Departure: Bayan-Ulgii (ULG)</div>
+    <div>2025.07.30 (Wed)</div>
+    <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>08:00</div>
+  </div>
+
+  <div style={{ textAlign: "center" }}>
+    <div style={{ marginBottom: "4px", fontSize: "14px" }}>Hunnu Air MR801</div>
+    <div style={{ color: "blue", fontWeight: "bold" }}>Duration: 3h 0m</div>
+  </div>
+
+  <div style={{ textAlign: "right" }}>
+    <div style={{ fontWeight: "bold" }}>Arrival: Ulaanbaatar (UBN)</div>
+    <div>2025.07.30 (Wed)</div>
+    <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>11:00</div>
+  </div>
+</div>
+    <div style={{ borderLeft: "2px solid blue", paddingLeft: "20px", marginLeft: "10px", marginTop: "30px", lineHeight: "1.8" }}>
+<div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+  <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>12:00</div>
+  <FaMapMarkerAlt style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+  <div>Visit Sukhbaatar Square (Government Palace & City Center)</div>
+</div>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+          {[sukhbaatar1, sukhbaatar3, sukhbaatar2].map((src, i) => (
+            <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+          ))}
+</div>
+
+<div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+  <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>13:00</div>
+  <FaLandmark style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+  <div>Explore the Chinggis Khaan National Museum</div>
+</div>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+          {[museum1, museum2, museum3].map((src, i) => (
+            <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+          ))}
+</div>
+<div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+  <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>16:00</div>
+  <FaMountain style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+  <div>Head to Zaisan Memorial Hill (City Viewpoint)</div>
+</div>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+          {[zaisan1, zaisan2, zaisan3].map((src, i) => (
+            <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+          ))}
+</div>
+
+<div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+  <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>18:00</div>
+  <FaHotel style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+  <div>Check-in: Ulaanbaatar City Hotel & Rest</div>
+</div>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+          {[ubhotel1, ubhotel3, ubhotel2].map((src, i) => (
+            <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+          ))}
+</div>
+
+{/* Meals */}
+<div style={{ marginTop: "30px", padding: "15px 20px", backgroundColor: "#f9f9f9", borderRadius: "10px", borderLeft: "4px solid blue" }}>
+  <div style={{ fontWeight: "bold", fontSize: "16px", marginBottom: "10px" }}>🍽️ Meals of the Day</div>
+  <div>• Breakfast: In-Flight Meal</div>
+  <div>• Lunch: Mongolian beef stir-fry</div>
+  <div>• Dinner: Korean food</div>
+</div>
+</div>
+
+  </>
+);
+
+export const AdventureTourDay7 = () => (
+<>
+    <div style={{ borderLeft: "2px solid blue", paddingLeft: "20px", marginLeft: "10px", marginTop: "30px", lineHeight: "1.8" }}>
+  <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+    <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>10:00</div>
+    <FaShoppingBag style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+    <div>Shopping for souvenirs at local markets</div>
+  </div>
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "-20px" }}>
+        {[shopping1, shopping3, shopping2].map((src, i) => (
+          <img key={i} src={src} alt={`Statue ${i}`} style={{ width: "200px", height: "130px", borderRadius: "8px" }} />
+        ))}
+      </div>
+
+  <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+    <div style={{ width: "70px", fontWeight: "bold", color: "#555" }}>13:00</div>
+    <FaBus style={{ fontSize: "18px", color: "blue", marginRight: "10px" }} />
+    <div>Transfer to Chingis Khaan International Airport</div>
+  </div>
+
+  
+
+    <div
+  className="flight-info-box"
+  style={{
+    border: "1px solid #eee",
+    borderRadius: "12px",
+    padding: "20px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+    marginTop: "20px",
+  }}
+>
+  <div>
+    <div style={{ fontWeight: "bold" }}>Departure: Ulaanbaatar (UBN)</div>
+    <div>2025.07.31 (Thu)</div>
+    <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>16:10</div>
+  </div>
+
+  <div style={{ textAlign: "center" }}>
+    <div style={{ marginBottom: "4px", fontSize: "14px" }}>Korean Air KE198</div>
+    <div style={{ color: "blue", fontWeight: "bold" }}>Duration: 3h 30m</div>
+  </div>
+
+  <div style={{ textAlign: "right" }}>
+    <div style={{ fontWeight: "bold" }}>Arrival: Incheon (ICN)</div>
+    <div>2025.07.31 (Thu)</div>
+    <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>19:40</div>
+  </div>
+</div>
+<div style={{ marginTop: "30px", padding: "15px 20px", backgroundColor: "#f9f9f9", borderRadius: "10px", borderLeft: "4px solid blue" }}>
+  <div style={{ fontWeight: "bold", fontSize: "16px", marginBottom: "10px" }}>🍽️ Meals of the Day</div>
+  <div>• Breakfast: Hotel buffet</div>
+  <div>• Lunch: Mongolian-style noodle soup</div>
+  <div>• Dinner: In-flight meal</div>
+</div>
+
+
+</div>
+    </>
 );

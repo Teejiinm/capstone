@@ -369,7 +369,7 @@ export const CityTourDay4 = () => (
 >
   <div>
     <div style={{ fontWeight: "bold" }}>Departure: Ulaanbaatar (UBN)</div>
-    <div>2025.07.12 (Sat)</div>
+    <div>2025.06.13 (Fri)</div>
     <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>16:10</div>
   </div>
 
@@ -380,7 +380,7 @@ export const CityTourDay4 = () => (
 
   <div style={{ textAlign: "right" }}>
     <div style={{ fontWeight: "bold" }}>Arrival: Incheon (ICN)</div>
-    <div>2025.07.12 (Sat)</div>
+    <div>2025.06.13 (Fri)</div>
     <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "5px" }}>19:40</div>
   </div>
 </div>

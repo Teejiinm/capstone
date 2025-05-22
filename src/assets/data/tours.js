@@ -11,7 +11,14 @@ import tourImg10 from "../images/tour-img10.jpg";
 
 import { SummerFestivalDay1, SummerFestivalDay2, SummerFestivalDay3, SummerFestivalDay4, SummerFestivalDay5 } from "../../components/Initerary/SummerFestival";
 import { CityTourDay1, CityTourDay2, CityTourDay3, CityTourDay4 } from "../../components/Initerary/CityTour";
-import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourDay4, AdventureTourDay5 } from "../../components/Initerary/AdventureTour";
+import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourDay4, AdventureTourDay5, AdventureTourDay6, AdventureTourDay7 } from "../../components/Initerary/AdventureTour";
+import { DessertTourDay1, DessertTourDay2, DessertTourDay3, DessertTourDay4, DessertTourDay5 } from "../../components/Initerary/DessertTour";
+import { RealFrozenDay1, RealFrozenTourDay2, RealFrozenTourDay3, RealFrozenTourDay4, RealFrozenTourDay5 } from "../../components/Initerary/RealFrozen";
+import { TraditionalTourDay1, TraditionalTourDay2, TraditionalTourDay3, TraditionalTourDay4 } from "../../components/Initerary/TraditionalTour";
+import { GolfTourDay2 } from "../../components/Initerary/GolfTour";
+import { WinterCityTourDay1, WinterCityTourDay2 } from "../../components/Initerary/WinterCityTour";
+import { YogaTourDay3 } from "../../components/Initerary/YogaTour";
+import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../../components/Initerary/HistoricalTour";
 
   const tours = [
     {
@@ -35,7 +42,7 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
         {
           day: "Day 1",
           date: "2025/07/08",
-          route: "Incheon ➝ Ulaanbaatar",
+          route: "Incheon ➝ Terelj",
           Component: SummerFestivalDay1, // 실제 컴포넌트
         },
         {
@@ -153,6 +160,18 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
           route: "Altai Tavan Bogd ➝ Ulgii City",
           Component: AdventureTourDay5, 
         },
+             {
+          day: "Day 6",
+          date: "2025/07/30",
+          route: "Ulgii City ➝ Ulaanbaatar City",
+          Component: AdventureTourDay6, 
+        },
+            {
+          day: "Day 7",
+          date: "2025/07/31",
+          route: "Ulaanbaatar City ➝ Incheon",
+          Component: AdventureTourDay7, 
+        },
       ]
     },
     {
@@ -167,6 +186,38 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
       avgRating: 0,
       photo: tourImg04,
       featured: true,
+      itinerary: [
+        {
+          day: "Day 1",
+          date: "2025/08/10",
+          route: "Incheon ➝ Dalanzadgad",
+          Component: DessertTourDay1, 
+        },
+         {
+          day: "Day 2",
+          date: "2025/08/11",
+          route: "Dune Dessert Tour",
+          Component: DessertTourDay2, 
+        },
+         {
+          day: "Day 3",
+          date: "2025/08/12",
+          route: "Dalanzadgad City Tour",
+          Component: DessertTourDay3, 
+        },
+         {
+          day: "Day 4",
+          date: "2025/08/13",
+          route: "Dalanzadgad ➝ Ulaanbaatar",
+          Component: DessertTourDay4, 
+        },
+         {
+          day: "Day 5",
+          date: "2025/08/14",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: DessertTourDay5, 
+        },
+      ]
     },
     {
       id: "05",
@@ -180,6 +231,39 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
       avgRating: 0,
       photo: tourImg05,
       featured: false,
+      itinerary: [
+        {
+          day: "Day 1",
+          date: "2025/12/20",
+          route: "Incheon ➝ Murun",
+          Component: RealFrozenDay1, 
+        },
+         {
+          day: "Day 2",
+          date: "2025/12/21",
+          route: "Khuvsgul Lake",
+          Component: RealFrozenTourDay2, 
+        },
+         {
+          day: "Day 3",
+          date: "2025/12/22",
+          route: "Tsaatan Reindeer Herders",
+          Component: RealFrozenTourDay3, 
+        },
+        {
+          day: "Day 4",
+          date: "2025/12/23",
+          route: "Murun ➝ Ulaanbaatar",
+          Component: RealFrozenTourDay4, 
+        },
+        {
+          day: "Day 5",
+          date: "2025/12/24",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: RealFrozenTourDay5, 
+        },
+        
+      ]
     },
     {
       id: "06",
@@ -193,6 +277,38 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
       avgRating: 0,
       photo: tourImg06,
       featured: false,
+      itinerary: [
+        {
+          day: "Day 1",
+          date: "2025/08/10",
+          route: "Incheon ➝ Arkhangai",
+          Component: TraditionalTourDay1, 
+        },
+         {
+          day: "Day 2",
+          date: "2025/08/11",
+          route: "Erdene Zuu Monastery and Kharkhorin Museum",
+          Component: TraditionalTourDay2, 
+        },
+         {
+          day: "Day 3",
+          date: "2025/08/12",
+          route: "Mongolian Traditional Lifestyle",
+          Component: TraditionalTourDay3, 
+        },
+         {
+          day: "Day 4",
+          date: "2025/08/13",
+          route: "Arkhangai ➝ Ulaanbaatar",
+          Component: TraditionalTourDay4, 
+        },
+         {
+          day: "Day 5",
+          date: "2025/08/14",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: DessertTourDay5, 
+        },
+      ]
     },
     {
       id: "07",
@@ -206,6 +322,40 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
       avgRating: 0,
       photo: tourImg07,
       featured: false,
+      itinerary: [
+        {
+          day: "Day 1",
+          date: "2025/07/08",
+          route: "Incheon ➝ Terelj",
+          Component: SummerFestivalDay1, 
+        },
+         {
+          day: "Day 2",
+          date: "2025/07/09",
+          route: "Golf Day",
+          Component: GolfTourDay2, 
+        },
+         {
+          day: "Day 3",
+          date: "2025/07/10",
+          route: "Terelj ➝ Ulaanbaatar",
+          Component: SummerFestivalDay3, 
+        },
+         {
+          day: "Day 4",
+          date: "2025/07/11",
+          route: "Mongolian National Naadam Festival",
+          Component: SummerFestivalDay4, // 실제 컴포넌트
+        },
+        {
+          day: "Day 5",
+          date: "2025/07/12",
+          route: "Ulaanbaatar ➝ Incheon",
+
+          Component: SummerFestivalDay5, // 실제 컴포넌트
+        },
+
+      ]
     },
     {
       id: "08",
@@ -219,6 +369,38 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
       avgRating: 0,
       photo: tourImg08,
       featured: false,
+      itinerary: [
+      {
+          day: "Day 1",
+          date: "2025/12/20",
+          route: "Incheon ➝ Ulaanbaatar",
+          Component: WinterCityTourDay1, 
+        },
+        {
+          day: "Day 2",
+          date: "2025/12/21",
+          route: "Terelj National Park",
+          Component: WinterCityTourDay2, 
+        },
+        {
+          day: "Day 3",
+          date: "2025/12/22",
+          route: "Historical Day Tour",
+          Component: CityTourDay2,
+        },
+        {
+          day: "Day 4",
+          date: "2025/12/23",
+          route: "Mongolian Art & Culturel Day",
+          Component: CityTourDay3,
+        },
+        {
+          day: "Day 5",
+          date: "2025/12/24",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: RealFrozenTourDay5, 
+        },
+      ]
     },
     {
   id: "09",
@@ -232,6 +414,38 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
   avgRating: 0,
   photo: tourImg09,
   featured: false,
+  itinerary: [
+     {
+          day: "Day 1",
+          date: "2025/08/10",
+          route: "Incheon ➝ Arkhangai",
+          Component: TraditionalTourDay1, 
+        },
+         {
+          day: "Day 2",
+          date: "2025/08/11",
+          route: "Erdene Zuu Monastery and Kharkhorin Museum",
+          Component: TraditionalTourDay2, 
+        },
+         {
+          day: "Day 3",
+          date: "2025/08/12",
+          route: "Yoga with Morin Khuur in Dessert",
+          Component: YogaTourDay3, 
+        },
+         {
+          day: "Day 4",
+          date: "2025/08/13",
+          route: "Arkhangai ➝ Ulaanbaatar",
+          Component: TraditionalTourDay4, 
+        },
+         {
+          day: "Day 5",
+          date: "2025/08/14",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: DessertTourDay5, 
+        },
+  ]
 },
 
     {
@@ -246,6 +460,45 @@ import { AdventureTourDay1, AdventureTourDay2, AdventureTourDay3, AdventureTourD
   avgRating: 0,
   photo: tourImg10,
   featured: false,
+  itinerary: [
+    {
+          day: "Day 1",
+          date: "2025/06/08",
+          route: "Incheon ➝ Khentii",
+          Component: HistoricalTourDay1,
+        },
+         {
+          day: "Day 2",
+          date: "2025/06/09",
+          route: "Land of Chingis Khan",
+          Component: HistoricalTourDay2,
+        },
+         {
+          day: "Day 3",
+          date: "2025/06/10",
+          route: "Khentii ➝ Ulaanbaatar",
+          Component: HistoricalTourDay3,
+        },
+     {
+          day: "Day 4",
+          date: "2025/06/11",
+          route: "Historical Day Tour",
+          Component: CityTourDay2,
+        },
+        {
+          day: "Day 5",
+          date: "2025/06/12",
+          route: "Mongolian Art & Culturel Day",
+          Component: CityTourDay3,
+        },
+        {
+          day: "Day 6",
+          date: "2025/06/13",
+          route: "Ulaanbaatar ➝ Incheon",
+          Component: CityTourDay4, 
+        },
+
+  ]
 },
 
     
