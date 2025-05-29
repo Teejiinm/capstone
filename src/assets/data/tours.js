@@ -21,58 +21,61 @@ import { YogaTourDay3 } from "../../components/Initerary/YogaTour";
 import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../../components/Initerary/HistoricalTour";
 
   const tours = [
+   {
+  id: "01",
+  title: "Summer Festival Tour",
+  city: "Ulaanbaatar",
+  distance: 100,
+  price: 1000,
+  maxGroupSize: 10,
+  desc: "Experience the essence of Mongolia where tradition and modern culture blend seamlessly. Witness the excitement of the Naadam Festival and dance the day away at the Playtime Music Festival. From nomadic adventures to vibrant city life, this summer tour captures the heart of Mongolia.",
+  reviews: [
     {
-      id: "01",
-      title: "Summer Festival Tour",
-      city: "Ulaanbaatar",
-      distance: 100,
-      price: 1000,
-      maxGroupSize: 10,
-      desc: "Experience the essence of Mongolia where tradition and modern culture blend seamlessly. Witness the excitement of the Naadam Festival and dance the day away at the Playtime Music Festival. From nomadic adventures to vibrant city life, this summer tour captures the heart of Mongolia.",
-      reviews: [
-        {
-          name: "jhon doe",
-          rating: 4.6,
-        },
-      ],
-      avgRating: 4.5,
-      photo: tourImg01,
-      featured: true,
-      itinerary: [
-        {
-          day: "Day 1",
-          date: "2025/07/08",
-          route: "Incheon ➝ Terelj",
-          Component: SummerFestivalDay1, // 실제 컴포넌트
-        },
-        {
-          day: "Day 2",
-          date: "2025/07/09",
-          route: "Playtime Music Festival",
-          Component: SummerFestivalDay2, // 실제 컴포넌트
-        },
-        {
-          day: "Day 3",
-          date: "2025/07/10",
-          route: "Terelj ➝ Ulaanbaatar",
-          Component: SummerFestivalDay3, // 실제 컴포넌트
-        },
-        {
-          day: "Day 4",
-          date: "2025/07/11",
-          route: "Mongolian National Naadam Festival",
-          Component: SummerFestivalDay4, // 실제 컴포넌트
-        },
-        {
-          day: "Day 5",
-          date: "2025/07/12",
-          route: "Ulaanbaatar ➝ Incheon",
-
-          Component: SummerFestivalDay5, // 실제 컴포넌트
-        },
-        
-      ]
+      name: "jhon doe",
+      rating: 4.6,
     },
+  ],
+  avgRating: 4.5,
+  photo: tourImg01,
+  featured: true,
+
+  from: "ulaanbaatar",  // ✅ 추가
+  to: "tov",         // ✅ 추가
+
+  itinerary: [
+    {
+      day: "Day 1",
+      date: "2025/07/08",
+      route: "Incheon ➝ Terelj",
+      Component: SummerFestivalDay1,
+    },
+    {
+      day: "Day 2",
+      date: "2025/07/09",
+      route: "Playtime Music Festival",
+      Component: SummerFestivalDay2,
+    },
+    {
+      day: "Day 3",
+      date: "2025/07/10",
+      route: "Terelj ➝ Ulaanbaatar",
+      Component: SummerFestivalDay3,
+    },
+    {
+      day: "Day 4",
+      date: "2025/07/11",
+      route: "Mongolian National Naadam Festival",
+      Component: SummerFestivalDay4,
+    },
+    {
+      day: "Day 5",
+      date: "2025/07/12",
+      route: "Ulaanbaatar ➝ Incheon",
+      Component: SummerFestivalDay5,
+    },
+  ]
+},
+
     {
       id: "02",
       title: "City Tour",
@@ -90,6 +93,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 4.5,
       photo: tourImg02,
       featured: true,
+      from: "ulaanbaatar",
+      to: "ulaanbaatar",
        itinerary: [
         {
           day: "Day 1",
@@ -129,6 +134,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg03,
       featured: true,
+      from: "ulaanbaatar",
+      to: "bayanolgii",
       itinerary: [
         {
           day: "Day 1",
@@ -186,6 +193,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg04,
       featured: true,
+      from: "ulaanbaatar",
+      to: "omnogovi",
       itinerary: [
         {
           day: "Day 1",
@@ -231,6 +240,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg05,
       featured: false,
+      from: "ulaanbaatar",
+      to: "khovsgol",
       itinerary: [
         {
           day: "Day 1",
@@ -277,6 +288,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg06,
       featured: false,
+      from: "ulaanbaatar",
+      to: "arkhangai",
       itinerary: [
         {
           day: "Day 1",
@@ -322,6 +335,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg07,
       featured: false,
+      from: "ulaanbaatar",
+      to: "tov",
       itinerary: [
         {
           day: "Day 1",
@@ -369,6 +384,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
       avgRating: 0,
       photo: tourImg08,
       featured: false,
+      from: "ulaanbaatar",
+      to: "tov",
       itinerary: [
       {
           day: "Day 1",
@@ -414,6 +431,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
   avgRating: 0,
   photo: tourImg09,
   featured: false,
+  from: "ulaanbaatar",
+  to: "arkhangai",
   itinerary: [
      {
           day: "Day 1",
@@ -460,6 +479,8 @@ import { HistoricalTourDay1, HistoricalTourDay2, HistoricalTourDay3 } from "../.
   avgRating: 0,
   photo: tourImg10,
   featured: false,
+  from: "ulaanbaatar",
+  to: "khentii",
   itinerary: [
     {
           day: "Day 1",
